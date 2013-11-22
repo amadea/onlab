@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Csoportok kezelése</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="templates/innerTemplate.xhtml">
+            
+            <ui:define name="center">
+         
+            <h1>Keresés csoportok között</h1>
+            <div class="text">
+            <div class="form">
+            <form>
+            <fieldset>
+            <ul>
+            <li> <label for="groups">Csoportjaim</label>
+            <select size="3" id="drop_down">
+            <option>Iskolatársak</option>
+            <option>Természetbarát kör</option>
+            <option>Horgolószakkör</option>
+            <option>Nyelvtanfolyam</option>
+            <option>Volt osztálytársak</option>
+            </select>
+            </li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            </div>
+            <div class="read"><a href="#">Keresés</a></div>
+            <h1>Új csoport létrehozása</h1>
+            <div class="text">
+            <div class="form">
+            <form>
+            <fieldset>
+            <ul>
+            <li> <label for="group_name">Csoportnév:</label>
+            <input name="group_name" id="group_name"
+            type="text" /> </li>
+            <li> <label for="group_text">Leírás:</label>
+            <textarea rows="5" cols="60">Csoport
+            leírása...
+            </textarea> </li>
+            <li> <label for="member_inv">Tagok meghívása</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option>Ács Milán</option>
+            <option>Elektro M. Ágnes</option>
+            <option>Cset Elek</option>
+            <option>Koax K. Ábel</option>
+            <option>File Edit</option>
+            <option>Békés Csaba</option>
+            <option>Wincs Eszter</option>
+            <option>Elvará Zsolt</option>
+            <option>Heu Réka</option>
+            </select>
+            </li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            </div>
+            <div class="read"><a href="#">Létrehozás</a></div>
+            <h1>Keresés tagok között</h1>
+            <div class="text">
+            <div class="form">
+            <form>
+            <fieldset>
+            <ul>
+            <li> <label for="groups">Keresés ebben a
+            csoportban</label>
+            <select multiple="multiple" size="3"
+            id="drop_down">
+            <option>Iskolatársak</option>
+            <option>Természetbarát kör</option>
+            <option>Horgolószakkör</option>
+            <option>Nyelvtanfolyam</option>
+            <option>Volt osztálytársak</option>
+            </select>
+            </li>
+            <li><label for="keyword">Kulcsszó:</label>
+            <input name="keyword" id="keyword" type="text" />
+            </li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            </div>
+            <div class="read"><a href="#">Keresés</a></div>
+            <h1>Új tag meghívása</h1>
+            <div class="text">
+            <div class="form">
+            <form>
+            <fieldset>
+            <ul>
+            <li> <label for="new_name">Név:</label> <input
+            name="new_name" id="new_name" type="text" /> </li>
+            <li> <label for="email">E-mail:</label> <input
+            name="email" id="email" type="text" /> </li>
+            <li> <label for="new_inv">Meghívó:</label>
+            <textarea rows="5" cols="60">Meghívó...
+            </textarea> </li>
+            <li> <label for="groups">Meghívás ebbe a
+            csoportba</label>
+            <select multiple="multiple" size="3"
+            id="drop_down">
+            <option>Iskolatársak</option>
+            <option>Természetbarát kör</option>
+            <option>Horgolószakkör</option>
+            <option>Nyelvtanfolyam</option>
+            <option>Volt osztálytársak</option>
+            </select>
+            </li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            <div class="ad_text"></div>
+            <div class="ad_preferences"></div>
+            </div>
+            <div class="read"><a href="#">Küldés</a></div>
+            <div style="clear: both;"></div>
+       
+            </ui:define>
+            
+        </ui:composition>  
+    </h:body>
+</html>
+

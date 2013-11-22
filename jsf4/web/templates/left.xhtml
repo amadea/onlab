@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Div left</title>
+    </h:head>
+    <h:body>
+         <ui:composition>
+ 
+            <h2>Adataim</h2>
+            <div class="left_bg">
+            <div class="left_grad">
+            <div class="login_data">
+            <div class="username_avatar"><img src="images/img1.jpg" alt="Profil kép" class="user_avatar" height="135" width="90" />
+            <div class="username">Üdv, <a href="#">Teszt Eszter</a>!</div>
+            </div>
+            <ul>
+                <li><a href="#">Személyes adataim</a></li>
+                <li><a href="#">Szakmai érdeklődési köreim</a></li>
+                <li><a href="#">Önéletrajzom</a></li>
+                <li><a href="#">Módosítom a jelszavam</a></li>
+            </ul>
+            <div class="read"><a href="index-out.html">Kijelentkezek</a></div>
+            </div>
+            </div>
+            </div>
+            
+            <div class="left_bot"></div>
+            
+            <h2>Hírdetéseim</h2>
+            <div class="left_bg">
+            <div class="left_grad">
+                
+                <!-- <c:forEach var="group" items=""> -->
+                    <div class="ad_short">
+                        <ui:insert name="ad_short">
+                            <ui:include src="elements/ad_short.xhtml"/>
+                        </ui:insert>
+                    </div>
+                <!-- </c:forEach> -->
+
+            <div class="read"><a href="#">Továbbiak</a></div>
+            </div>
+            </div>
+            
+            <div class="left_bot"></div>
+            
+            <h2>Jelentkezéseim</h2>
+            <div class="left_bg">
+            <div class="left_grad">
+          
+                 <!-- <c:forEach var="group" items=""> -->
+                    <div class="ad_short">
+                        <ui:insert name="ad_short">
+                            <ui:include src="elements/ad_short.xhtml"/>
+                        </ui:insert>
+                    </div>
+                <!-- </c:forEach> -->
+                
+            <div class="read"><a href="#">Továbbiak</a></div>
+            </div>
+            </div>
+            <div class="left_bot"></div>
+
+	</ui:composition>
+    </h:body>
+</html>
+

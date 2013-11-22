@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Hírdetések kezelése</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="templates/innerTemplate.xhtml">
+            
+            <ui:define name="center">
+                              
+            
+            <h1>Keresés a hirdetések között</h1>
+            <div class="text">
+            <div class="search1">
+            <form>
+            <fieldset>
+            <ul>
+            <li>
+            <div class="question">Mit keresel?</div>
+            </li>
+            <li> <input name="group1" value="Munkahely"
+            id="munkahely" type="radio" /> Munkahelyet </li>
+            <li> <input name="group1" value="Munkaerő"
+            id="munkaero" checked="checked" type="radio" />
+            Munkaerőt </li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            <div class="search2">
+            <form>
+            <fieldset>
+            <ul>
+            <li>
+            <div class="question">Mi alapján keresel?</div>
+            </li>
+            <li> <input name="group2" value="Mentett"
+            id="mentett" type="radio" />Keresés mentett
+            érdeklődési kör alapján
+            <select size="1" id="drop_down">
+            <option>Olasz nyelvtanár</option>
+            </select>
+            </li>
+            <li> <input name="group2" value="Uj" id="uj"
+            checked="checked" type="radio" />Új keresés </li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            <div class="search3">
+            <form>
+            <fieldset>
+            <ul>
+            <li>
+            <div class="question">Új keresés</div>
+            </li>
+            <li><label for="keyword">Kulcsszó:</label>
+            <input name="keyword" id="keyword" type="text" />
+            </li>
+            <li> <label for="postion">Pozícióterület</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>IT</option>
+            <option>Mérnök</option>
+            <option>Oktatás</option>
+            <option>Adminisztráció</option>
+            <option>Fizikai munka</option>
+            </select>
+            </li>
+            <li> <label for="education">Végzettség</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>alapfokú</option>
+            <option>szak(közép)iskola</option>
+            <option>gimnázium</option>
+            <option>főiskola/BSC</option>
+            <option>egyetem/MSc</option>
+            </select>
+            </li>
+            <li> <label for="area">Terület</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>Budapest</option>
+            <option>Békés megye</option>
+            <option>Csongrád megye</option>
+            <option>Fejér megye</option>
+            <option>Komárom-Esztergom megye</option>
+            <option>Pest megye</option>
+            </select>
+            </li>
+            <li> <label for="posted">Feladva</label>
+            <select size="3" id="drop_down">
+            <option selected="selected">mind</option>
+            <option>elmúlt 1 nap</option>
+            <option>elmúlt 1 hét</option>
+            <option>elmúlt 1 hónap</option>
+            </select>
+            </li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            <div class="save_search">
+            <form>
+            <fieldset>
+            <ul>
+            <li><input name="save_as" value="Save"
+            id="save" type="checkbox" />Keresés mentése
+            érdeklődési körként</li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            </div>
+            <div class="read"><a href="#">Keresés</a></div>
+            <h1>Hirdetés feladása</h1>
+            <div class="text">
+            <div class="search1">
+            <form>
+            <fieldset>
+            <ul>
+            <li>
+            <div class="question">Hirdetés típusa</div>
+            </li>
+            <li> <input name="group1" value="Munkahely"
+            id="munkahely" type="radio" /> Keres</li>
+            <li> <input name="group1" value="Munkaerő"
+            id="munkaero" checked="checked" type="radio" />
+            Kínál</li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            <div class="ad_text">
+            <form>
+            <fieldset>
+            <ul>
+            <li>
+            <div class="question">Hirdetés adatai</div>
+            </li>
+            <li> <label for="keyword">Hirdetés címe:</label>
+            <input name="ad_title" id="ad_title" type="text" /></li>
+            <li> <label for="keyword">Pozíciónév/nevek:</label>
+            <input name="ad_title" id="ad_title" type="text" /></li>
+            <li> <textarea rows="5" cols="60">Hirdetés
+            szövege...
+            </textarea> </li>
+            <li><input name="group3" value="Save"
+            id="save" type="checkbox" />Érdeklődési kör hozzáadása</li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            <div class="ad_preferences">
+            <form>
+            <fieldset>
+            <ul>
+            <li>
+            <div class="question">Egyéb preferenciák megadása</div>
+            </li>
+            <li> <label for="postion">Pozícióterület</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>IT</option>
+            <option>Mérnök</option>
+            <option>Oktatás</option>
+            <option>Adminisztráció</option>
+            <option>Fizikai munka</option>
+            </select>
+            </li>
+            <li> <label for="education">Végzettség</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>alapfokú</option>
+            <option>szak(közép)iskola</option>
+            <option>gimnázium</option>
+            <option>főiskola/BSC</option>
+            <option>egyetem/MSc</option>
+            </select>
+            </li>
+            <li> <label for="area">Terület</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>Budapest</option>
+            <option>Békés megye</option>
+            <option>Csongrád megye</option>
+            <option>Fejér megye</option>
+            <option>Komárom-Esztergom megye</option>
+            <option>Pest megye</option>
+            </select>
+            </li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            <div class="save_search">
+            <form>
+            <fieldset>
+            <ul>
+            <li><input name="cv_loaded" value="cv_loaded"
+            id="save" type="checkbox" />Feltöltött önéletrajz
+            hozzáadása</li>
+            </ul>
+            </fieldset>
+            </form>
+            </div>
+            </div>
+            <div class="read"><a href="#">Feladás</a></div>
+            <div style="clear: both;"></div>
+
+
+             
+            </ui:define>
+            
+        </ui:composition>  
+    </h:body>
+</html>
+
