@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>Div right</title>
+    </h:head>
+    <h:body>
+         <ui:composition>
+ 
+            <h2>Csoportjaim</h2>
+            <div class="right_bg">
+                <div class="right_grad">
+                
+               <!-- <c:forEach var="group" items=""> -->
+                    <div class="group"> 
+                        <ui:insert name="group">
+                            <ui:include src="elements/group.xhtml"/>
+                        </ui:insert>
+                    </div>
+               <!-- </c:forEach> -->
+            
+                    <div class="read"><a href="#">Továbbiak</a></div>
+                    
+                </div>
+            </div>
+            
+            <div class="right_bot"></div>
+            
+            <h2>Tagok</h2>
+            <div class="right_bg">
+                <div class="right_grad">
+                    
+                    <!-- <c:forEach var="group" items=""> -->
+                    <div class="member"> 
+                        <ui:insert name="member">
+                            <ui:include src="elements/member.xhtml"/>
+                        </ui:insert>
+                    </div>
+                 <!-- </c:forEach> -->
+                 
+                    <div class="read"><a href="#">Továbbiak</a></div>
+                    
+                </div>
+            </div>
+            <div class="right_bot"></div>
+	
+	</ui:composition>
+    </h:body>
+</html>
+
