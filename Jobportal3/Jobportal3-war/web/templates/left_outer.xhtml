@@ -10,29 +10,30 @@
         
         <ui:composition>
              
-        <h2>Bejelentkezés</h2>
-        <div class="left_bg">
-        <div class="left_grad">
-        <div class="login_data">
-        <ul>
-        <li>Felhasználónevem:</li>
-        <li><a href="#"><input name="username"
-        class="form-login" title="Username" value=""
-        size="30" maxlength="2000" /></a></li>
-        <li>Jelszavam:</li>
-        <li><a href="#"><input name="password"
-        class="form-login" title="Password" value=""
-        size="30" maxlength="2000" type="password" /></a></li>
-        <li>
-        <div class="read"><a href="index-in.html">Bejelentkezek</a></div>
-        </li>
-        <li><a href="#"> Regisztrálok</a></li>
-        <li><a href="#">Elfelejtettem a jelszavam</a></li>
-        </ul>
-        </div>
-        </div>
-        </div>
-        <div class="left_bot"></div>
+               
+                        <h2>Bejelentkezés</h2>
+                            <div class="left_bg">
+                                <div class="left_grad">
+                                    <div class="login_data">
+                                        <h:form id="login_form">
+                                        <ul>
+                                            <li><div class="warning_message"><h:message for="username" /></div></li>
+                                            <li>Felhasználónevem:</li>
+                                            <li><h:inputText id="username"  required="true" requiredMessage="Add meg a felhasználóneved!" value="#{loginBean.username}" size="30"/></li>
+                                            <li><div class="warning_message"><h:message for="password" /></div></li>
+                                            <li>Jelszavam:</li>
+                                            <li><h:inputSecret id="password" redisplay="false" required="true" requiredMessage="Add meg a jelszavad!" value="#{loginBean.password}" size="30"/></li>
+                                            <li><h:commandButton id="login" value="Bejelentkezek" type="submit" action="#{loginBean.login}" > </h:commandButton></li> 
+                                            <li><div class="warning_message"><h:outputText value="#{loginBean.loginMessage}" ></h:outputText></div></li>
+                                            <li><h:outputLink id="register" value="registration.xhtml">Regisztrálok</h:outputLink></li>
+                                            <li><h:outputLink id="forgotten_password" value="forgottenpassword.xhtml">Elfelejtettem a jelszavam</h:outputLink></li>
+                                        </ul>
+                                      </h:form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="left_bot"></div>
 
 	</ui:composition>
         

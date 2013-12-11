@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>Div class profile_full</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            
+                             
+            <!--profile_personal block-->
+            <div class="profile_personal">
+                        <ui:insert name="profile_personal">
+                            <ui:include src="profile_personal.xhtml"/>
+                        </ui:insert>
+            </div>
+        
+        
+        
+        <!--profile_interest block-->  
+         <div class="profile_interest">
+                        <ui:insert name="profile_interest">
+                            <ui:include src="profile_interest.xhtml"/>
+                        </ui:insert>
+          </div>
+       
+        
+        <!--profile_cv block-->    
+          <div class="profile_cv">
+                        <ui:insert name="profile_cv">
+                            <ui:include src="profile_cv.xhtml"/>
+                        </ui:insert>
+          </div>
+        
+        <!--profile_password block-->    
+          <div class="profile_password">
+                        <ui:insert name="profile_password">
+                            <ui:include src="profile_password.xhtml"/>
+                        </ui:insert>
+          </div>
+        
+        
+        
+        <div style="clear: both;"></div>
+      
+            
+	</ui:composition>
+    </h:body>
+</html>
+

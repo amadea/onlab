@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Div class adv_search3b</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            
+             <h1>Keresés keres típusú hírdetések között</h1>
+            <div class="text">
+             <div class="search3">
+            <h:form>
+            <fieldset>
+            <ul>
+          
+            <li><label for="keyword">Kulcsszó:</label>
+            <input name="keyword" id="keyword" type="text" />
+            </li>
+            <li> <label for="postion">Pozícióterület</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>IT</option>
+            <option>Mérnök</option>
+            <option>Oktatás</option>
+            <option>Adminisztráció</option>
+            <option>Fizikai munka</option>
+            </select>
+            </li>
+            <li> <label for="education">Végzettség</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>alapfokú</option>
+            <option>szak(közép)iskola</option>
+            <option>gimnázium</option>
+            <option>főiskola/BSC</option>
+            <option>egyetem/MSc</option>
+            </select>
+            </li>
+            <li> <label for="area">Terület</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>Budapest</option>
+            <option>Békés megye</option>
+            <option>Csongrád megye</option>
+            <option>Fejér megye</option>
+            <option>Komárom-Esztergom megye</option>
+            <option>Pest megye</option>
+            </select>
+            </li>
+            <li> <label for="posted">Feladva</label>
+            <select size="3" id="drop_down">
+            <option selected="selected">mind</option>
+            <option>elmúlt 1 nap</option>
+            <option>elmúlt 1 hét</option>
+            <option>elmúlt 1 hónap</option>
+            </select>
+            </li>
+            </ul>
+            </fieldset>
+              <h:commandButton action="#{advForm.stepLast}" value="Keresés"/>  
+            </h:form>
+            </div>
+        
+            </div>
+           
+            
+        </ui:composition>
+    </h:body>
+</html>
+
+

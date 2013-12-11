@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Div class adv_search1</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            
+            <h1>Keresés a hirdetések között</h1>
+            <div class="text">
+           <!-- <div class="search1"> -->
+                
+            <div class="question">Mit keresel?</div>
+            <h:form>
+                    <h:selectOneRadio value="#{advForm.searchType}">
+                        <f:selectItem itemValue="job" itemLabel="Munkahelyet" />
+                        <f:selectItem itemValue="worker" itemLabel="Munkaerőt" />
+                    </h:selectOneRadio>
+                    <h:commandButton action="#{advForm.step2}" value="Tovább"/>
+                 </h:form>
+                
+            <!-- </div>-->
+             </div>
+                
+            
+        </ui:composition>
+    </h:body>
+</html>
+
+  
+                    

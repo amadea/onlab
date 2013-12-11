@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Div class adv_new</title>
+    </h:head>
+    <h:body>
+         <ui:composition>
+ 
+            
+             <h1>Hirdetés feladása</h1>
+            <div class="text">
+            <div class="search1">
+            <h:form>
+            <fieldset>
+            <ul>
+            <li>
+            <div class="question">Hirdetés típusa</div>
+            </li>
+            <li> <input name="group1" value="Munkahely"
+            id="munkahely" type="radio" /> Keres</li>
+            <li> <input name="group1" value="Munkaerő"
+            id="munkaero" checked="checked" type="radio" />
+            Kínál</li>
+            </ul>
+            </fieldset>
+            </h:form>
+            </div>
+                
+                
+            <div class="ad_text">
+            <h:form>
+            <fieldset>
+            <ul>
+            <li>
+            <div class="question">Hirdetés adatai</div>
+            </li>
+            <li> <label for="keyword">Hirdetés címe:</label>
+            <input name="ad_title" id="ad_title" type="text" /></li>
+            <li> <label for="keyword">Pozíciónév/nevek:</label>
+            <input name="ad_title" id="ad_title" type="text" /></li>
+            <li> <textarea rows="5" cols="60">Hirdetés
+            szövege...
+            </textarea> </li>
+            <li><input name="group3" value="Save"
+            id="save" type="checkbox" />Érdeklődési kör hozzáadása</li>
+            </ul>
+            </fieldset>
+            </h:form>
+            </div>
+                
+                
+            <div class="ad_preferences">
+            <h:form>
+            <fieldset>
+            <ul>
+            <li>
+            <div class="question">Egyéb preferenciák megadása</div>
+            </li>
+            <li> <label for="postion">Pozícióterület</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>IT</option>
+            <option>Mérnök</option>
+            <option>Oktatás</option>
+            <option>Adminisztráció</option>
+            <option>Fizikai munka</option>
+            </select>
+            </li>
+            <li> <label for="education">Végzettség</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>alapfokú</option>
+            <option>szak(közép)iskola</option>
+            <option>gimnázium</option>
+            <option>főiskola/BSC</option>
+            <option>egyetem/MSc</option>
+            </select>
+            </li>
+            <li> <label for="area">Terület</label>
+            <select multiple="multiple" size="5"
+            id="drop_down">
+            <option selected="selected">mind</option>
+            <option>Budapest</option>
+            <option>Békés megye</option>
+            <option>Csongrád megye</option>
+            <option>Fejér megye</option>
+            <option>Komárom-Esztergom megye</option>
+            <option>Pest megye</option>
+            </select>
+            </li>
+            </ul>
+            </fieldset>
+            </h:form>
+            </div>
+            <div class="save_search">
+            <h:form>
+            <fieldset>
+            <ul>
+            <li><input name="cv_loaded" value="cv_loaded"
+            id="save" type="checkbox" />Feltöltött önéletrajz
+            hozzáadása</li>
+            </ul>
+            </fieldset>
+            </h:form>
+            </div>
+            </div>
+            <h:commandButton action="go" value="Feladás"/>
+            <div style="clear: both;"></div>
+
+	</ui:composition>
+    </h:body>
+</html>
+
