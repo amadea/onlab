@@ -4,6 +4,11 @@
  * and open the template in the editor.
  */
 
+import ami.com.onlab.jobportal3.User;
+import ami.com.onlab.jobportal3.UserFacade;
+import java.util.ArrayList;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
@@ -16,6 +21,10 @@ import javax.enterprise.context.RequestScoped;
 @RequestScoped
 public class LoginBean {
     
+       
+    @EJB
+    private UserFacade userFacade;
+    
     private String adminUsername;
     private String adminPassword;
 
@@ -23,13 +32,15 @@ public class LoginBean {
     private String password;
     private String loginMessage;
     
+    User user = new User();
+    
     /**
      * Creates a new instance of LoginBean
      */
     public LoginBean() {
-        adminUsername = "admin";
-        adminPassword = "admin";
-        loginMessage = null;
+        //adminUsername = "admin";
+        //adminPassword = "admin";
+        //loginMessage = null;
     }
     
     public String getUsername() {
@@ -72,8 +83,24 @@ public class LoginBean {
     }
     
     public String login(){
-       if(username.equals(adminUsername) && password.equals(adminPassword)){
+        
+        //find user by id
+        //List<User> usersList = new ArrayList<User>;
+        //List<User> usersList = userFacade.findAll();
+        //findByUsername
+        user = userFacade.findByUserName(username);
+        String passwordFromDB = user.getPassword();
+        
+      /* if(username.equals(adminUsername) && password.equals(adminPassword)){
             return "index-in";
+        }
+       else{
+        loginMessage = "Rossz felhasználó név vagy jelszó!";  
+        return null;
+       }*/
+        
+        if(password.equals(passwordFromDB)){
+            return "main";
         }
        else{
         loginMessage = "Rossz felhasználó név vagy jelszó!";  

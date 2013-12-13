@@ -6,6 +6,8 @@
 
 package ami.com.onlab.jobportal3;
 
+import java.util.Iterator;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,5 +29,21 @@ public class UserFacade extends AbstractFacade<User> {
     public UserFacade() {
         super(User.class);
     }
+    
+   public User findByUserName(String username){
+       
+       User user = new User();
+       List<User> allUser = this.findAll();
+       
+       for(Iterator<User> it = allUser.iterator(); it.hasNext();){
+           user = it.next();
+           if(username.equals(user.getUserName()) ){
+                return user;
+           }
+               
+       }
+       return user;
+   }
+  
     
 }
