@@ -31,7 +31,7 @@ public class Advertisement implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long advertisement_id;
+    private Long advertisementID;
 
     
     public enum Type{
@@ -106,17 +106,17 @@ private Region region;
     }
     
     public Long getId() {
-        return advertisement_id;
+        return advertisementID;
     }
 
     public void setId(Long advertisement_id) {
-        this.advertisement_id = advertisement_id;
+        this.advertisementID = advertisement_id;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (advertisement_id != null ? advertisement_id.hashCode() : 0);
+        hash += (advertisementID != null ? advertisementID.hashCode() : 0);
         return hash;
     }
 
@@ -127,7 +127,7 @@ private Region region;
             return false;
         }
         Advertisement other = (Advertisement) object;
-        if ((this.advertisement_id == null && other.advertisement_id != null) || (this.advertisement_id != null && !this.advertisement_id.equals(other.advertisement_id))) {
+        if ((this.advertisementID == null && other.advertisementID != null) || (this.advertisementID != null && !this.advertisementID.equals(other.advertisementID))) {
             return false;
         }
         return true;
@@ -135,7 +135,7 @@ private Region region;
 
     @Override
     public String toString() {
-        return "com.ami.jobportal.Advertisement[ id=" + advertisement_id + " ]";
+        return "com.ami.jobportal.Advertisement[ id=" + advertisementID + " ]";
     }
     
     

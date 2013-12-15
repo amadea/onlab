@@ -17,6 +17,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -27,6 +29,9 @@ import javax.persistence.Temporal;
  */
 @Entity
 @Table(name="USERS")
+@NamedQueries(
+        @NamedQuery(name = "user.getAll", query="SELECT e FROM User e")
+)
 public class User implements Serializable {
     
     public enum Gender{
@@ -40,7 +45,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long user_id;
+    private Long userID;
     
     
 private String userName;
@@ -76,17 +81,17 @@ private List<Advertisement> appliedAdvertisements;  //many-to-many
     }
 
     public Long getId() {
-        return user_id;
+        return userID;
     }
 
     public void setId(Long user_id) {
-        this.user_id = user_id;
+        this.userID = user_id;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (user_id != null ? user_id.hashCode() : 0);
+        hash += (userID != null ? userID.hashCode() : 0);
         return hash;
     }
 
@@ -97,7 +102,7 @@ private List<Advertisement> appliedAdvertisements;  //many-to-many
             return false;
         }
         User other = (User) object;
-        if ((this.user_id == null && other.user_id != null) || (this.user_id != null && !this.user_id.equals(other.user_id))) {
+        if ((this.userID == null && other.userID != null) || (this.userID != null && !this.userID.equals(other.userID))) {
             return false;
         }
         return true;
@@ -105,7 +110,7 @@ private List<Advertisement> appliedAdvertisements;  //many-to-many
 
     @Override
     public String toString() {
-        return "com.ami.jobportal.User[ id=" + user_id + " ]";
+        return "com.ami.jobportal.User[ id=" + userID + " ]";
     }
     
     public String getUserName() {

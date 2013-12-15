@@ -26,7 +26,7 @@ public class Interest implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long interest_id;
+    private Long interestID;
 
     private String name;
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -41,17 +41,17 @@ public class Interest implements Serializable {
     
 
         public Long getId() {
-        return interest_id;
+        return interestID;
     }
 
     public void setId(Long interest_id) {
-        this.interest_id = interest_id;
+        this.interestID = interest_id;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (interest_id != null ? interest_id.hashCode() : 0);
+        hash += (interestID != null ? interestID.hashCode() : 0);
         return hash;
     }
 
@@ -62,7 +62,7 @@ public class Interest implements Serializable {
             return false;
         }
         Interest other = (Interest) object;
-        if ((this.interest_id == null && other.interest_id != null) || (this.interest_id != null && !this.interest_id.equals(other.interest_id))) {
+        if ((this.interestID == null && other.interestID != null) || (this.interestID != null && !this.interestID.equals(other.interestID))) {
             return false;
         }
         return true;
@@ -70,7 +70,7 @@ public class Interest implements Serializable {
 
     @Override
     public String toString() {
-        return "com.ami.jobportal.Interest[ id=" + interest_id + " ]";
+        return "com.ami.jobportal.Interest[ id=" + interestID + " ]";
     }
 
     /**

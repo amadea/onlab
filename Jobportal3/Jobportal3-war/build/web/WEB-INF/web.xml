@@ -9,6 +9,16 @@
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    
+      <servlet>
+    <servlet-name>NewServlet</servlet-name>
+    <servlet-class>ami.test.db.NewServlet</servlet-class>
+  </servlet>
+    <servlet-mapping>
+    <servlet-name>NewServlet</servlet-name>
+    <url-pattern>/newservlet</url-pattern>
+  </servlet-mapping>
+  
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>/faces/*</url-pattern>
@@ -22,3 +32,6 @@
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
 </web-app>
+
+
+ 

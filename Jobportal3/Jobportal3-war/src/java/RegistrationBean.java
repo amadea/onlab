@@ -27,7 +27,7 @@ public class RegistrationBean implements Validator{
     private String lastName;
     private String firstName;
     private String email;
-    private String username;
+    private String userName;
     private String password1;
     private String password2;
     private String securePassword;
@@ -84,17 +84,17 @@ public class RegistrationBean implements Validator{
     }
 
     /**
-     * @return the username
+     * @return the userName
      */
     public String getUsername() {
-        return username;
+        return userName;
     }
 
     /**
-     * @param username the username to set
+     * @param userName the userName to set
      */
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String userName) {
+        this.userName = userName;
     }
 
     /**

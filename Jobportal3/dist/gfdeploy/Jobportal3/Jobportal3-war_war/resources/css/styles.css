@@ -668,7 +668,7 @@ ad_preferences{
     color:#FF0000;
     font-weight: bold;
 }
-.username_avatar {
+.userName_avatar {
 	clear: right;
 	overflow: auto;
 	padding: 10px;
@@ -683,7 +683,7 @@ ad_preferences{
 	height: auto;
 }
 
-.username a{
+.userName a{
 	font-weight: bold;
 }
 

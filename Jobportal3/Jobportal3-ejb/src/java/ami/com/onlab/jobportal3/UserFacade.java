@@ -30,14 +30,14 @@ public class UserFacade extends AbstractFacade<User> {
         super(User.class);
     }
     
-   public User findByUserName(String username){
+   public User findByUserName(String userName){
        
        User user = new User();
        List<User> allUser = this.findAll();
        
        for(Iterator<User> it = allUser.iterator(); it.hasNext();){
            user = it.next();
-           if(username.equals(user.getUserName()) ){
+           if(userName.equals(user.getUserName()) ){
                 return user;
            }
                

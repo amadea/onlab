@@ -28,7 +28,7 @@ public class Group implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long group_id;
+    private Long groupID;
     
     
 private String name;
@@ -49,17 +49,17 @@ private List<Advertisement> commonAdvertisements;                 //many-to-many
 
 
     public Long getId() {
-        return group_id;
+        return groupID;
     }
 
     public void setId(Long id) {
-        this.group_id = id;
+        this.groupID = id;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (group_id != null ? group_id.hashCode() : 0);
+        hash += (groupID != null ? groupID.hashCode() : 0);
         return hash;
     }
 
@@ -70,7 +70,7 @@ private List<Advertisement> commonAdvertisements;                 //many-to-many
             return false;
         }
         Group other = (Group) object;
-        if ((this.group_id == null && other.group_id != null) || (this.group_id != null && !this.group_id.equals(other.group_id))) {
+        if ((this.groupID == null && other.groupID != null) || (this.groupID != null && !this.groupID.equals(other.groupID))) {
             return false;
         }
         return true;
@@ -78,7 +78,7 @@ private List<Advertisement> commonAdvertisements;                 //many-to-many
 
     @Override
     public String toString() {
-        return "com.ami.jobportal.Group[ id=" + group_id + " ]";
+        return "com.ami.jobportal.Group[ id=" + groupID + " ]";
     }
 
     public String getName() {

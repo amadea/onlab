@@ -25,10 +25,10 @@ public class LoginBean {
     @EJB
     private UserFacade userFacade;
     
-    private String adminUsername;
+    private String adminUserName;
     private String adminPassword;
 
-    private String username;
+    private String userName;
     private String password;
     private String loginMessage;
     
@@ -43,15 +43,15 @@ public class LoginBean {
         //loginMessage = null;
     }
     
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     /**
-     * @param username the username to set
+     * @param userName the userName to set
      */
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     /**
@@ -88,10 +88,10 @@ public class LoginBean {
         //List<User> usersList = new ArrayList<User>;
         //List<User> usersList = userFacade.findAll();
         //findByUsername
-        user = userFacade.findByUserName(username);
+        user = userFacade.findByUserName(userName);
         String passwordFromDB = user.getPassword();
         
-      /* if(username.equals(adminUsername) && password.equals(adminPassword)){
+      /* if(userName.equals(adminUsername) && password.equals(adminPassword)){
             return "index-in";
         }
        else{
