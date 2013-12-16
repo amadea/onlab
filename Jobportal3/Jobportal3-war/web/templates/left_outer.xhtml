@@ -19,14 +19,15 @@
                                         <ul>
                                             <li><div class="warning_message"><h:message for="userName" /></div></li>
                                             <li>Felhasználónevem:</li>
-                                            <li><h:inputText id="userName"  required="true" requiredMessage="Add meg a felhasználóneved!" value="#{loginBean.userName}" size="30" label="UserName"/></li>
+                                            <li><h:inputText id="userName"  required="true" requiredMessage="Add meg a felhasználóneved!" value="#{loginBean.userName}" size="30" label="userName"/></li>
                                             <li><div class="warning_message"><h:message for="password" /></div></li>
                                             <li>Jelszavam:</li>
                                             <li><h:inputSecret id="password" redisplay="false" required="true" requiredMessage="Add meg a jelszavad!" value="#{loginBean.password}" size="30"/></li>
-                                            <li><h:commandButton id="login" value="Bejelentkezek" type="submit" action="#{loginBean.login}" > </h:commandButton></li> 
+                                            <li><h:commandButton id="login" value="Bejelentkezek" type="submit" action="#{loginBean.login}" /> </li> 
                                             <li><div class="warning_message"><h:outputText value="#{loginBean.loginMessage}" ></h:outputText></div></li>
                                             <li><h:outputLink id="register" value="registration.xhtml">Regisztrálok</h:outputLink></li>
                                             <li><h:outputLink id="forgotten_password" value="forgottenpassword.xhtml">Elfelejtettem a jelszavam</h:outputLink></li>
+                                            <li><div class="warning_message"><h:outputText value="#{loginBean.loginMessage}" ></h:outputText></div></li>
                                         </ul>
                                       </h:form>
                                     </div>

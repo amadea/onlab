@@ -80,11 +80,11 @@ private List<Advertisement> appliedAdvertisements;  //many-to-many
     appliedAdvertisements = new ArrayList<Advertisement>();
     }
 
-    public Long getId() {
+    public Long getUserID() {
         return userID;
     }
 
-    public void setId(Long user_id) {
+    public void setUserID(Long user_id) {
         this.userID = user_id;
     }
 

@@ -30,8 +30,8 @@ public class UserFacade extends AbstractFacade<User> {
         super(User.class);
     }
     
-   public User findByUserName(String userName){
-       
+  public User findByUserName(String userName){
+        
        User user = new User();
        List<User> allUser = this.findAll();
        
@@ -44,6 +44,32 @@ public class UserFacade extends AbstractFacade<User> {
        }
        return user;
    }
+   
+    public void addUser(User user) {
+        em.persist(user);
+    }
+
+    // Add business logic below. (Right-click in editor and choose
+    // "Insert Code > Add Business Method")
+
+    public void deleteUser(long userID) {
+        User user = this.getUser(userID);
+        em.remove(user);
+    }
+
+    public void editUser(User user) {
+        em.merge(user);
+    }
+
+    public User getUser(long userID) {
+        User user = em.find(User.class, userID);
+        return user;
+    }
+
+    public List<User> getAllUser() {
+        return em.createNamedQuery("User.getAll").getResultList();
+    }
+    
   
     
 }

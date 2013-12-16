@@ -8,6 +8,7 @@ import ami.com.onlab.jobportal3.User;
 import ami.com.onlab.jobportal3.UserFacade;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
@@ -21,6 +22,8 @@ import javax.enterprise.context.RequestScoped;
 @RequestScoped
 public class LoginBean {
     
+    @EJB(name="UserService")
+    private UserService userService;
        
     @EJB
     private UserFacade userFacade;
@@ -41,7 +44,11 @@ public class LoginBean {
         //adminUsername = "admin";
         //adminPassword = "admin";
         //loginMessage = null;
+        
+        
     }
+    
+   
     
     public String getUserName() {
         return userName;
@@ -100,7 +107,10 @@ public class LoginBean {
        }*/
         
         if(password.equals(passwordFromDB)){
-            return "main";
+            //find the userID, and set in the sessionBean
+            long id = user.getUserID();
+            userService.setUserID(id);
+            return "main.xhtml";
         }
        else{
         loginMessage = "Rossz felhasználó név vagy jelszó!";  

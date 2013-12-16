@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Regisztráció</title>
     </h:head>
@@ -15,30 +16,52 @@
             <h1>Regisztráció</h1>
             <div class="text">
             <div class="reg">
-            <form>
+            <h:form id="reg_form">
             <fieldset>
             <ul>
-            <li><label for="surname">Vezetéknév:</label>
-            <input name="surname" id="surname" type="text" />
-            </li>
-            <li> <label for="firstname">Keresztnév:</label>
-            <input name="firstname" id="firstname"
-            type="text" /> </li>
-            <li> <label for="mail">E-mail:</label> <input
-            name="mail" id="mail" type="text" /> </li>
-            <li> <label for="id_name">Azonosító név:</label>
-            <input name="id_name" id="id_name" type="text" />
-            </li>
-            <li> <label for="password1">Jelszó:</label>
-            <input name="password1" id="password1"
-            type="password" /> </li>
-            <li> <label for="password1">Jelszó még egyszer:</label>
-            <input name="password2" id="password2"
-            type="password" /> </li>
+                
+            <li><div class="warning_message"><h:message for="lastName" /></div></li>
+            <li><label for="lastName">Vezetéknév:</label></li>
+            <li><h:inputText id="lastName" required="true" requiredMessage="Add meg a vezetékneved!" value="#{registrationBean.lastName}" size="30" styleClass="reg-input"/></li>
+            
+            <li><div class="warning_message"><h:message for="firstName" /></div></li>
+            <li><label for="firstName">Keresztnév:</label></li>
+            <li><h:inputText id="firstName"  required="true" requiredMessage="Add meg a keresztneved!" value="#{registrationBean.firstName}" size="30" styleClass="reg-input"/></li>
+    
+            <li><div class="warning_message"><h:message for="email" /></div></li>
+            <li><label for="email">E-mail:</label></li>
+            <li><h:inputText id="email"  required="true" requiredMessage="Add meg az email címed!" validatorMessage="Hibás email cím!" value="#{registrationBean.email}" size="30" styleClass="reg-input">
+            <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" /> 
+            </h:inputText></li>
+    
+            <li><div class="warning_message"><h:message for="userName" /></div></li>
+            <li><label for="userName">Felhasználó név:</label></li>
+            <li><h:inputText id="userName" required="true" requiredMessage="Add meg a felhasználóneved!" value="#{registrationBean.userName}" size="30" styleClass="reg-input"/></li>
+    
+            <li><div class="warning_message"><h:outputText value="#{registrationBean.passwordMessage}" ></h:outputText></div></li>
+    
+            <li><div class="warning_message"><h:message for="password1" /></div></li>
+            <li><label for="password1">Jelszó:</label></li>
+            <li><h:inputSecret id="password1" redisplay="false" required="true" requiredMessage="Add meg a jelszavad!" value="#{registrationBean.password1}" size="30" styleClass="reg-input">
+                <f:validator validatorId="passwordValidator" />
+                <f:attribute name="confirm" value="#{confirm}" />
+            </h:inputSecret></li>
+
+            <li><div class="warning_message"><h:message for="password2" /></div></li>
+            <li><label for="password2">Jelszó még egyszer:</label></li>
+            <li><h:inputSecret id="password2" binding="#{confirm}" redisplay="false" required="true" requiredMessage="Add meg a jelszavad!" value="#{registrationBean.password2}" size="30" styleClass="reg-input"/></li>
+    
+            <li>
+            <h:commandButton id="register" value="Regisztráció" type="reset"  action="#{registrationBean.register}" > 
+            <f:ajax execute="reg_form" render="reg_form"/>
+            </h:commandButton>
+            </li>  
+            <li><h:outputText value="#{registrationBean.registerMessage}" /></li>
+            
             </ul>
             </fieldset>
-            </form>
-            <div class="read"><a href="index-in.html">Regisztrálok</a></div>
+            </h:form>
+            
             </div>
             </div>
                 

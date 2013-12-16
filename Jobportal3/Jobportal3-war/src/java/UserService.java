@@ -27,6 +27,7 @@ public class UserService implements Serializable {
     private UserFacade userFacade;
     
     //personal data
+    private long userID;
     private String address;
     private String birthDate;
     private String email;
@@ -48,6 +49,20 @@ public class UserService implements Serializable {
      */
    
     public UserService() {
+    }
+
+    /**
+     * @return the userID
+     */
+    public long getUserID() {
+        return userID;
+    }
+
+    /**
+     * @param userID the userID to set
+     */
+    public void setUserID(long userID) {
+        this.userID = userID;
     }
     
     //getter methods are called in the client interface

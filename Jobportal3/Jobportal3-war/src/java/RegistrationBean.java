@@ -86,14 +86,14 @@ public class RegistrationBean implements Validator{
     /**
      * @return the userName
      */
-    public String getUsername() {
+    public String getUserName() {
         return userName;
     }
 
     /**
      * @param userName the userName to set
      */
-    public void setUsername(String userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
 
@@ -166,6 +166,7 @@ public class RegistrationBean implements Validator{
     
     public void startRegProcess(){
         setRegisterMessage("A regisztráció sikeres!");
+        //save data
     }
     
     @Override
