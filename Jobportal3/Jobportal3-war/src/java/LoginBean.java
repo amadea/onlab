@@ -8,6 +8,7 @@ import ami.com.onlab.jobportal3.User;
 import ami.com.onlab.jobportal3.UserFacade;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -19,6 +20,7 @@ import javax.enterprise.context.RequestScoped;
  * @author Ami
  */
 @Named(value = "loginBean")
+@ManagedBean 
 @RequestScoped
 public class LoginBean {
     
@@ -110,6 +112,7 @@ public class LoginBean {
             //find the userID, and set in the sessionBean
             long id = user.getUserID();
             userService.setUserID(id);
+            userService.setUserName(userName);
             return "main.xhtml";
         }
        else{

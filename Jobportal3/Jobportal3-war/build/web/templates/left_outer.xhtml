@@ -25,8 +25,8 @@
                                             <li><h:inputSecret id="password" redisplay="false" required="true" requiredMessage="Add meg a jelszavad!" value="#{loginBean.password}" size="30"/></li>
                                             <li><h:commandButton id="login" value="Bejelentkezek" type="submit" action="#{loginBean.login}" /> </li> 
                                             <li><div class="warning_message"><h:outputText value="#{loginBean.loginMessage}" ></h:outputText></div></li>
-                                            <li><h:outputLink id="register" value="registration.xhtml">Regisztrálok</h:outputLink></li>
-                                            <li><h:outputLink id="forgotten_password" value="forgottenpassword.xhtml">Elfelejtettem a jelszavam</h:outputLink></li>
+                                            <li><h:outputLink id="registration" value="registration.xhtml">Regisztrálok</h:outputLink></li>
+                                            <li><h:outputLink id="forgottenpassword" value="forgottenpassword.xhtml">Elfelejtettem a jelszavam</h:outputLink></li>
                                             <li><div class="warning_message"><h:outputText value="#{loginBean.loginMessage}" ></h:outputText></div></li>
                                         </ul>
                                       </h:form>

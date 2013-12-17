@@ -5,6 +5,9 @@
  */
 
 
+import ami.com.onlab.jobportal3.User;
+import ami.com.onlab.jobportal3.UserFacade;
+import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIInput;
@@ -23,6 +26,9 @@ import javax.faces.view.ViewScoped;
 @FacesValidator(value="passwordValidator")
 @ViewScoped
 public class RegistrationBean implements Validator{
+    
+    @EJB
+    private UserFacade userFacade;
 
     private String lastName;
     private String firstName;
@@ -30,7 +36,7 @@ public class RegistrationBean implements Validator{
     private String userName;
     private String password1;
     private String password2;
-    private String securePassword;
+    //private String securePassword;
     private String passwordMessage;
     private String registerMessage;
     private boolean passwordOK;
@@ -167,6 +173,13 @@ public class RegistrationBean implements Validator{
     public void startRegProcess(){
         setRegisterMessage("A regisztráció sikeres!");
         //save data
+        User regUser = new User();
+        regUser.setLastName(lastName);
+        regUser.setFirstName(firstName);
+        regUser.setUserName(userName);
+        regUser.setEmail(email);
+        regUser.setPassword(password1);
+        userFacade.addUser(regUser);
     }
     
     @Override

@@ -13,16 +13,16 @@
             <div class="left_bg">
             <div class="left_grad">
             <div class="login_data">
-            <div class="userName_avatar"><img src="images/img1.jpg" alt="Profil kép" class="user_avatar" height="135" width="90" />
+                <div class="userName_avatar"><h:graphicImage value="images/member_avatar.jpg" alt="Profil kép" class="user_avatar" />
             <div class="userName">Üdv, <h:outputLabel value="#{userService.userName}"/></div>
             </div>
             <ul>
-                <li><a href="profile.xhtml">Személyes adataim</a></li>
-                <li><a href="profile.xhtml">Szakmai érdeklődési köreim</a></li>
-                <li><a href="profile.xhtml">Önéletrajzom</a></li>
-                <li><a href="profile.xhtml">Módosítom a jelszavam</a></li>
-            </ul>
-            <div class="read"><a href="login.xhtml">Kijelentkezek</a></div>
+               <li><h:outputLink id="personal" value="profile.xhtml">Személyes adataim</h:outputLink></li>
+               <li><h:outputLink id="interest" value="profile.xhtml">Szakmai érdeklődési köreim</h:outputLink></li>
+               <li><h:outputLink id="cv" value="profile.xhtml">Önéletrajzom</h:outputLink></li> 
+               <li><h:outputLink id="password" value="profile.xhtml">Módosítom a jelszavam</h:outputLink></li>
+               <li><h:outputLink id="login" value="login.xhtml">Kijelentkezek</h:outputLink></li>
+             </ul>
             </div>
             </div>
             </div>

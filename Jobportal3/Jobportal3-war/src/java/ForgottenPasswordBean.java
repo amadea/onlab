@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 
+import ami.com.onlab.jobportal3.User;
+import ami.com.onlab.jobportal3.UserFacade;
+import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
@@ -17,9 +20,14 @@ import javax.enterprise.context.RequestScoped;
 //@Dependent
 @RequestScoped
 public class ForgottenPasswordBean {
+    
+    @EJB
+    private UserFacade userFacade;
 
-   private String emailToSend;
+   
    private String message;
+   private String userName;
+   private String email;
     
      /**
      * Creates a new instance of ForgottenPasswordBean
@@ -28,12 +36,12 @@ public class ForgottenPasswordBean {
     }
     
 
-    public String getEmailToSend() {
-        return emailToSend;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setEmailToSend(String emailToSend) {
-        this.emailToSend = emailToSend;
+    public void setEmailToSend(String userName) {
+        this.userName = userName;
     }
 
     public String getMessage() {
@@ -46,15 +54,20 @@ public class ForgottenPasswordBean {
    
     public void sendEmail(){
         //find the given email address in the database
+        User user = userFacade.findByUserName(userName);
         
         
-        //if email is not find, message will shown
-        message = "Nincs ilyen email címmel rendelkező felhasználó!";
-        
+        //if user is not find, message will shown
+        if(user == null){
+        message = "Nincs ilyen felhasználónevű felhasználó!";
+        }
+        else{
         //else, email will be sent
-      
-            message = "Az új jelszó el lett küldve a megadott email címre";
-            
+        email = user.getEmail();
+        //clling email sener method
+        
+        message = "Az új jelszó el lett küldve a felhasználóhoz tartozó email címre";
+        }
             
     }
     

@@ -69,7 +69,7 @@ public class UserFacade extends AbstractFacade<User> {
     public List<User> getAllUser() {
         return em.createNamedQuery("User.getAll").getResultList();
     }
-    
+ 
   
     
 }
