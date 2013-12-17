@@ -696,4 +696,15 @@ ad_preferences{
 }
 
 
+.panel_grid{
+padding-left: 5px;
+padding-right: 5px;
+text-align: left;
+    
+}
 
+.panel_grid row{
+    list-style: none;
+    padding: 3px 5px 3px 5px;
+    border-bottom: 1px dotted #979797;
+}

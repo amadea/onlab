@@ -110,11 +110,11 @@ private Region region;
         visibleFor = new ArrayList<Group>();
     }
     
-    public Long getId() {
+    public Long getAdvertisementID() {
         return advertisementID;
     }
 
-    public void setId(Long advertisement_id) {
+    public void setAdvertisementID(Long advertisement_id) {
         this.advertisementID = advertisement_id;
     }
 

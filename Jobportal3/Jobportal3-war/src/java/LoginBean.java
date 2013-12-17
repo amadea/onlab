@@ -111,8 +111,8 @@ public class LoginBean {
         if(password.equals(passwordFromDB)){
             //find the userID, and set in the sessionBean
             long id = user.getUserID();
-            userService.setUserID(id);
-            userService.setUserName(userName);
+            userService.initialize(id);
+            
             return "main.xhtml";
         }
        else{

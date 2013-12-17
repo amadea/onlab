@@ -40,11 +40,9 @@ public class AdvForm implements Serializable{
     private boolean advSearch3bVisible;
     private boolean advSearch4aVisible;
 
-  
     private boolean advNewVisible;
-    
-    
-    Interest choosedInterest;
+ 
+    private Interest choosedInterest;
 
   
  
@@ -52,16 +50,13 @@ public class AdvForm implements Serializable{
      * Creates a new instance of AdvForm
      */
     public AdvForm() {
-        
-    
-   // choosedInterest = new Interest();
+  // choosedInterest = new Interest();
         
     operationType = "search";       
     searchType = "job";  
     sourceType = "new";   
     
-     advChooseVisible = true;
-    
+    advChooseVisible = true; 
     advSearch1Visible = false;
     advSearch2Visible = false;
     advSearch3aVisible = false;
@@ -246,8 +241,8 @@ public class AdvForm implements Serializable{
     }
       
       public void start() {
+       
     conversation.begin();
-    
   }
   
   public void end() {

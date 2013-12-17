@@ -34,7 +34,7 @@ public class AdvertisementFacade extends AbstractFacade<Advertisement> {
         return em.createNamedQuery("advertisement.getAll").getResultList();
     }
     
-    List<Advertisement> findAllVisibleForUser(long userID){
+    public List<Advertisement> findAllVisibleForUser(long userID){
         
         List<Advertisement> resultList = new ArrayList<Advertisement>();
         List<Advertisement> allList = this.getAllAdvertisement();

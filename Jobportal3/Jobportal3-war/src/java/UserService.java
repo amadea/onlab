@@ -4,12 +4,17 @@
  * and open the template in the editor.
  */
 
+import ami.com.onlab.jobportal3.Advertisement;
+import ami.com.onlab.jobportal3.AdvertisementFacade;
 import ami.com.onlab.jobportal3.Group;
 import ami.com.onlab.jobportal3.Interest;
+import ami.com.onlab.jobportal3.User;
 import ami.com.onlab.jobportal3.UserFacade;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
 
@@ -26,8 +31,19 @@ public class UserService implements Serializable {
     @EJB
     private UserFacade userFacade;
     
+    @EJB
+    AdvertisementFacade advertisementFacade;
+    
+    
+    private User user;
+    
+    
+    private String password1;
+    private String password2;
+    
     //personal data
-    private long userID;
+   // private long userID;
+    /*
     private String address;
     private String birthDate;
     private String email;
@@ -40,9 +56,17 @@ public class UserService implements Serializable {
     private String skype;
     private String userName;
     
+    */
+
+    
+    
     
     private List<Interest> interests;
     private List<Group> groups;
+    
+    private List<Advertisement> visibleAdvertisements;
+
+   
 
     /**
      * Creates a new instance of UserService
@@ -50,125 +74,181 @@ public class UserService implements Serializable {
    
     public UserService() {
     }
+    
+    //@PostConstruct
+    public void initialize(long userID){
+        
+        //load user data from DB
+        user = userFacade.getUser(userID);
+        
+        //advertisements
+        visibleAdvertisements = new ArrayList<Advertisement>();
+        visibleAdvertisements = advertisementFacade.findAllVisibleForUser(userID);
+        
+    }
 
     /**
      * @return the userID
      */
+    
+     public List<Advertisement> getVisibleAdvertisements() {
+        return visibleAdvertisements;
+    }
+
+    public void setVisibleAdvertisements(List<Advertisement> visibleAdvertisements) {
+        this.visibleAdvertisements = visibleAdvertisements;
+    }
+    
+    public String getPassword1() {
+        return password1;
+    }
+
+    public void setPassword1(String password1) {
+        this.password1 = password1;
+    }
+
+    public String getPassword2() {
+        return password2;
+    }
+
+    public void setPassword2(String password2) {
+        this.password2 = password2;
+    }
+    
     public long getUserID() {
-        return userID;
+        return user.getUserID();
     }
 
     /**
      * @param userID the userID to set
-     */
+     
     public void setUserID(long userID) {
         this.userID = userID;
-    }
+    }*/
     
     //getter methods are called in the client interface
 
-    public UserFacade getUserFacade() {
-        return userFacade;
-    }
-
-    public void setUserFacade(UserFacade userFacade) {
-        this.userFacade = userFacade;
-    }
-
     public String getAddress() {
-        return address;
+        return user.getAddress();
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        user.setAddress(address);
     }
 
-    public String getBirthDate() {
-        return birthDate;
+    public Date getBirthDate() {
+        return user.getBirthDate();
     }
 
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthDate(Date birthDate) {
+        user.setBirthDate(birthDate);
     }
 
     public String getEmail() {
-        return email;
+        return user.getEmail();
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        user.setEmail(email);
     }
 
     public String getFirstName() {
-        return firstName;
+        return user.getFirstName();
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        user.setFirstName(firstName);
     }
 
     public String getGender() {
-        return gender;
+        if(user.getGender()== User.Gender.FEMALE){
+            return "female";
+        }
+        else{
+            return "male";
+        }
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+        if(gender.equalsIgnoreCase("female")){
+        user.setGender(User.Gender.FEMALE);
+        }
+        else{
+           user.setGender(User.Gender.MALE); 
+        }
     }
 
     public String getLastName() {
-        return lastName;
+        return user.getLastName();
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        user.setLastName(lastName);
     }
 
     public String getNationality() {
-        return nationality;
+        if(user.getNationality()== User.Nationality.HUNGARIAN){
+            return "hungarian";
+        }
+        return null;
+       
     }
 
     public void setNationality(String nationality) {
-        this.nationality = nationality;
+       if(nationality.equals("hungarian")){
+           user.setNationality(User.Nationality.HUNGARIAN);
+       }
     }
 
     public String getPhone() {
-        return phone;
+        return user.getPhone();
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        user.setPhone(phone);
     }
 
     public String getSkype() {
-        return skype;
+        return user.getSkype();
     }
 
     public void setSkype(String skype) {
-        this.skype = skype;
+         user.setSkype(skype);
     }
 
     public String getUserName() {
-        return userName;
+        return user.getUserName();
     }
 
     public void setUserName(String userName) {
-        this.userName = userName;
+         user.setUserName(userName);
     }
 
     public List<Interest> getInterests() {
-        return interests;
+        return user.getInterests();
     }
 
     public void setInterests(List<Interest> interests) {
-        this.interests = interests;
+        user.setInterests(interests);
     }
 
     public List<Group> getGroups() {
-        return groups;
+        return user.getGroups();
     }
 
     public void setGroups(List<Group> groups) {
-        this.groups = groups;
+        user.setGroups(groups);
+    }
+    
+   
+    public void savePersonalData(){
+        
+        userFacade.edit(user);
+    }
+    
+     public void saveNewPassword(){
+        
+        userFacade.edit(user);
     }
     
     
