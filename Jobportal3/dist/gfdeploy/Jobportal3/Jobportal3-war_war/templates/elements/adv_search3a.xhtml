@@ -20,39 +20,36 @@
             <li><label for="keyword">Kulcsszó:</label>
             <input name="keyword" id="keyword" type="text" />
             </li>
-            <li> <label for="postion">Pozícióterület</label>
-            <select multiple="multiple" size="5"
-            id="drop_down">
-            <option selected="selected">mind</option>
-            <option>IT</option>
-            <option>Mérnök</option>
-            <option>Oktatás</option>
-            <option>Adminisztráció</option>
-            <option>Fizikai munka</option>
-            </select>
-            </li>
-            <li> <label for="education">Végzettség</label>
-            <select multiple="multiple" size="5"
-            id="drop_down">
-            <option selected="selected">mind</option>
-            <option>alapfokú</option>
-            <option>szak(közép)iskola</option>
-            <option>gimnázium</option>
-            <option>főiskola/BSC</option>
-            <option>egyetem/MSc</option>
-            </select>
-            </li>
-            <li> <label for="area">Terület</label>
-            <select multiple="multiple" size="5"
-            id="drop_down">
-            <option selected="selected">mind</option>
-            <option>Budapest</option>
-            <option>Békés megye</option>
-            <option>Csongrád megye</option>
-            <option>Fejér megye</option>
-            <option>Komárom-Esztergom megye</option>
-            <option>Pest megye</option>
-            </select>
+           Pozícióterület
+            <h:selectOneMenu value="#{userService.position}" label="Pozícióterület" >
+                <ui:repeat value="#{userService.positions}" var="pos">  
+   
+                    <f:selectItem itemValue="#{pos}" itemLabel="#{pos}"/>   
+  
+                </ui:repeat>  
+            
+            </h:selectOneMenu>  
+               
+                 Végzettség
+              <h:selectOneMenu value="#{userService.education}" label="Végzettség" >
+                <ui:repeat value="#{userService.educations}" var="edu">  
+   
+                    <f:selectItem itemValue="#{edu}" itemLabel="#{edu}"/>   
+  
+                </ui:repeat>  
+            
+            </h:selectOneMenu>  
+                 Terület
+               <h:selectOneMenu value="#{userService.region}" label="Terület" >
+                <ui:repeat value="#{userService.regions}" var="reg">  
+   
+                    <f:selectItem itemValue="#{reg}" itemLabel="#{reg}"/>   
+  
+                </ui:repeat>  
+            
+            </h:selectOneMenu>    
+                 
+                 
             </li>
             <li> <label for="posted">Feladva</label>
             <select size="3" id="drop_down">

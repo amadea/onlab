@@ -48,11 +48,11 @@ private List<Advertisement> commonAdvertisements;                 //many-to-many
     }
 
 
-    public Long getId() {
+    public Long getGroupID() {
         return groupID;
     }
 
-    public void setId(Long id) {
+    public void setGroupID(Long id) {
         this.groupID = id;
     }
 

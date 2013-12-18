@@ -13,104 +13,70 @@
             
              <h1>Hirdetés feladása</h1>
             <div class="text">
-            <div class="search1">
+            
             <h:form>
-            <fieldset>
-            <ul>
-            <li>
+          
             <div class="question">Hirdetés típusa</div>
-            </li>
-            <li> <input name="group1" value="Munkahely"
-            id="munkahely" type="radio" /> Keres</li>
-            <li> <input name="group1" value="Munkaerő"
-            id="munkaero" checked="checked" type="radio" />
-            Kínál</li>
-            </ul>
-            </fieldset>
-            </h:form>
-            </div>
+            
+                    <h:selectOneRadio value="#{advForm.searchType}">
+                        <f:selectItem itemValue="job" itemLabel="Keres" />
+                        <f:selectItem itemValue="worker" itemLabel="Kínál" />
+                    </h:selectOneRadio>       
+        
                 
-                
-            <div class="ad_text">
-            <h:form>
-            <fieldset>
-            <ul>
-            <li>
             <div class="question">Hirdetés adatai</div>
-            </li>
-            <li> <label for="keyword">Hirdetés címe:</label>
-            <input name="ad_title" id="ad_title" type="text" /></li>
-            <li> <label for="keyword">Pozíciónév/nevek:</label>
-            <input name="ad_title" id="ad_title" type="text" /></li>
-            <li> <textarea rows="5" cols="60">Hirdetés
-            szövege...
-            </textarea> </li>
-            <li><input name="group3" value="Save"
-            id="save" type="checkbox" />Érdeklődési kör hozzáadása</li>
-            </ul>
-            </fieldset>
+            Hirdetés címe:
+            <h:inputText value="#{advForm.newTitle}" label="Hirdetés címe:"/>
+            Pozíciónév:
+                <h:inputText value="#{advForm.newPosName}" label="Pozíciónév:"/>
+            Hirdetés szövege
+            <h:inputTextarea cols="60" rows="5" label="Hirdetés szövege"/>
+            Érdeklődési kör hozzáadása
+            <h:selectBooleanCheckbox value="#{advForm.addInterest}" label="Érdeklődési kör hozzáadása" />
+        
+            
+            
+            
+                 <div class="question">Egyéb preferenciák megadása</div>
+                 
+                 Pozícióterület
+            <h:selectOneMenu value="#{userService.position}" label="Pozícióterület" >
+                <ui:repeat value="#{userService.positions}" var="pos">  
+   
+                    <f:selectItem itemValue="#{pos}" itemLabel="#{pos}"/>   
+  
+                </ui:repeat>  
+            
+            </h:selectOneMenu>  
+               
+                 Végzettség
+              <h:selectOneMenu value="#{userService.education}" label="Végzettség" >
+                <ui:repeat value="#{userService.educations}" var="edu">  
+   
+                    <f:selectItem itemValue="#{edu}" itemLabel="#{edu}"/>   
+  
+                </ui:repeat>  
+            
+            </h:selectOneMenu>  
+                 Terület
+               <h:selectOneMenu value="#{userService.region}" label="Terület" >
+                <ui:repeat value="#{userService.regions}" var="reg">  
+   
+                    <f:selectItem itemValue="#{reg}" itemLabel="#{reg}"/>   
+  
+                </ui:repeat>  
+            
+            </h:selectOneMenu>    
+                 
+       Feltöltött önéletrajz hozzáadása
+            <h:selectBooleanCheckbox value="#{advForm.addCV}" label="Feltöltött önéletrajz hozzáadása" />
+            
+            
             </h:form>
-            </div>
-                
-                
-            <div class="ad_preferences">
-            <h:form>
-            <fieldset>
-            <ul>
-            <li>
-            <div class="question">Egyéb preferenciák megadása</div>
-            </li>
-            <li> <label for="postion">Pozícióterület</label>
-            <select multiple="multiple" size="5"
-            id="drop_down">
-            <option selected="selected">mind</option>
-            <option>IT</option>
-            <option>Mérnök</option>
-            <option>Oktatás</option>
-            <option>Adminisztráció</option>
-            <option>Fizikai munka</option>
-            </select>
-            </li>
-            <li> <label for="education">Végzettség</label>
-            <select multiple="multiple" size="5"
-            id="drop_down">
-            <option selected="selected">mind</option>
-            <option>alapfokú</option>
-            <option>szak(közép)iskola</option>
-            <option>gimnázium</option>
-            <option>főiskola/BSC</option>
-            <option>egyetem/MSc</option>
-            </select>
-            </li>
-            <li> <label for="area">Terület</label>
-            <select multiple="multiple" size="5"
-            id="drop_down">
-            <option selected="selected">mind</option>
-            <option>Budapest</option>
-            <option>Békés megye</option>
-            <option>Csongrád megye</option>
-            <option>Fejér megye</option>
-            <option>Komárom-Esztergom megye</option>
-            <option>Pest megye</option>
-            </select>
-            </li>
-            </ul>
-            </fieldset>
-            </h:form>
-            </div>
-            <div class="save_search">
-            <h:form>
-            <fieldset>
-            <ul>
-            <li><input name="cv_loaded" value="cv_loaded"
-            id="save" type="checkbox" />Feltöltött önéletrajz
-            hozzáadása</li>
-            </ul>
-            </fieldset>
-            </h:form>
-            </div>
-            </div>
+           
+            
             <h:commandButton action="go" value="Feladás"/>
+            </div>
             <div style="clear: both;"></div>
 
 	</ui:composition>

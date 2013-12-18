@@ -2,16 +2,26 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Div class member</title>
     </h:head>
     <h:body>
           <ui:composition>
  
-            <img src="images/member_avatar.jpg" alt="member_avatar" class="member_avatar" />
-            <div class="member_name"><a href="#">Tag neve</a></div>
-            <div style="clear: both;"></div>
+                <h:panelGrid columns="2" >
+                    <ui:repeat value="#{userService.visibleMembers}" var="member">
+            <div class="member_name"><h:link value="#{member.userName}" outcome="member">
+                <f:param name="id" value="#{member.userID}" />
+            </h:link></div>
+                <div class="member_avatar">
+                    <h:graphicImage value="#{member.picture}" />
+                </div>
+           <div style="clear: both;"></div>
+        </ui:repeat>
+            
+                </h:panelGrid>
  
 	</ui:composition>
     </h:body>

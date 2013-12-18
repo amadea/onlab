@@ -40,11 +40,11 @@ public class Interest implements Serializable {
     
     
 
-        public Long getId() {
+        public Long getInterestID() {
         return interestID;
     }
 
-    public void setId(Long interest_id) {
+    public void setInterestID(Long interest_id) {
         this.interestID = interest_id;
     }
 

@@ -12,20 +12,18 @@
          <h1>Önéletrajzaim</h1>
         <div class="text">
         <div class="form">
-        <form>
+        <h:form>
         <fieldset>
-        <ul>
-        <li> <label for="cv_load">Önéletrajz feltöltése:</label>
-        <input name="datafile" size="20" value=""
-             accept="" type="file" /> </li>
-       <li> <label for="cv_wizard"><a href="#">Önéletrajz
-        varázsló</a></label> </li>
-        </ul>
+        <h:panelGrid columns="2">
+         <h:outputLabel>Önéletrajz feltöltése:</h:outputLabel>  
+        <h:inputFile id="cv_file" value="#{userService.CVFile}"/>
+        <h:outputLink id="cv_wizard" value="#">Önéletrajz varázsló</h:outputLink>
+         </h:panelGrid>
         </fieldset>
-        </form>
+        </h:form>
         </div>
         </div>
-        <div class="read"><a href="#">Módosítás</a></div>
+         <h:commandButton id="save_cv" value="Mentés" type="submit" action="#{userService.saveCV}"/>  
             
         </ui:composition>
     </h:body>

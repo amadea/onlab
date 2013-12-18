@@ -36,10 +36,25 @@ public class UserService implements Serializable {
     
     
     private User user;
+
     
     
     private String password1;
     private String password2;
+    
+    
+    private List<String> positions;
+
+   
+    private List<String> regions;
+    private List<String> educations;
+    
+    private String position;
+
+    
+    private String region;
+    private String education;
+    
     
     //personal data
    // private long userID;
@@ -59,12 +74,22 @@ public class UserService implements Serializable {
     */
 
     
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
     
     
     private List<Interest> interests;
     private List<Group> groups;
     
     private List<Advertisement> visibleAdvertisements;
+    private List<User> visibleMembers;
+
+    
 
    
 
@@ -98,6 +123,63 @@ public class UserService implements Serializable {
     public void setVisibleAdvertisements(List<Advertisement> visibleAdvertisements) {
         this.visibleAdvertisements = visibleAdvertisements;
     }
+    
+    public List<User> getVisibleMembers() {
+        return visibleMembers;
+    }
+
+    public void setVisibleMembers(List<User> visibleMembers) {
+        this.visibleMembers = visibleMembers;
+    }
+    
+     public List<String> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(List<String> positions) {
+        this.positions = positions;
+    }
+
+    public List<String> getRegions() {
+        return regions;
+    }
+
+    public void setRegions(List<String> regions) {
+        this.regions = regions;
+    }
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public List<String> getEducations() {
+        return educations;
+    }
+
+    public void setEducations(List<String> educations) {
+        this.educations = educations;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+    
+    
     
     public String getPassword1() {
         return password1;
@@ -223,9 +305,18 @@ public class UserService implements Serializable {
     public void setUserName(String userName) {
          user.setUserName(userName);
     }
+    
+    public byte[] getCVFile(){
+        return user.getCVFile();
+    }
+    
+     public void setCVFile(byte[] cVFile){
+        user.setCVFile(cVFile);
+    }
 
     public List<Interest> getInterests() {
         return user.getInterests();
+        
     }
 
     public void setInterests(List<Interest> interests) {
@@ -246,10 +337,19 @@ public class UserService implements Serializable {
         userFacade.edit(user);
     }
     
+     public void saveCV(){
+        
+        userFacade.edit(user);
+    }
+    
+    
      public void saveNewPassword(){
         
         userFacade.edit(user);
     }
     
+     public void createInterest(){
+         //forward to the interest creation panel
+     }
     
 }

@@ -6,11 +6,13 @@
 
 import ami.com.onlab.jobportal3.Interest;
 import java.io.Serializable;
+import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
 import javax.enterprise.context.Conversation;
 import javax.enterprise.context.ConversationScoped;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 
@@ -25,7 +27,7 @@ import javax.inject.Inject;
 public class AdvForm implements Serializable{
     
     
-    private @Inject Conversation conversation;
+    @Inject private Conversation conversation;
     
    // ListAdvertisements list = new ListAdvertisements();
     
@@ -44,7 +46,25 @@ public class AdvForm implements Serializable{
  
     private Interest choosedInterest;
 
+  private String newTitle;
+   private String newPosName;
+
+    public String getNewPosName() {
+        return newPosName;
+    }
+
+    public void setNewPosName(String newPosName) {
+        this.newPosName = newPosName;
+    }
   
+
+    public String getNewTitle() {
+        return newTitle;
+    }
+
+    public void setNewTitle(String newTitle) {
+        this.newTitle = newTitle;
+    }
  
     /**
      * Creates a new instance of AdvForm
@@ -63,6 +83,11 @@ public class AdvForm implements Serializable{
     advSearch3bVisible = false;
     advSearch4aVisible = false;
     advNewVisible = false;
+    }
+    
+    @PostConstruct
+    private void initialize() {
+   conversation.begin();
     }
     
     
@@ -191,6 +216,14 @@ public class AdvForm implements Serializable{
         this.choosedInterest = choosedInterest;
     }
     
+    public void addInterest(){
+        
+    }
+    
+     public void addCV(){
+        
+    }
+    
     
     //after adv_choose
     public void step1(){
@@ -239,6 +272,9 @@ public class AdvForm implements Serializable{
        end();
     
     }
+    
+    
+  
       
       public void start() {
        
