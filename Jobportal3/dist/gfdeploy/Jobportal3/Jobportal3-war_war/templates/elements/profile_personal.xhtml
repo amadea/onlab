@@ -20,16 +20,13 @@
              <h:panelGrid columns="2">
          
                 <h:outputLabel>Vezetéknév:</h:outputLabel>
-                <h:inputText value="#{userService.lastName}" size="30" styleClass="reg-input"/>
+                <h:inputText value="#{userService.user.lastName}" size="30" styleClass="reg-input"/>
                 
                 <h:outputLabel>Keresztnév:</h:outputLabel>
-                <h:inputText value="#{userService.firstName}" size="30" styleClass="reg-input"/>
-                
-                <h:outputLabel>Keresztnév:</h:outputLabel>
-                <h:inputText value="#{userService.firstName}" size="30" styleClass="reg-input"/>
+                <h:inputText value="#{userService.user.firstName}" size="30" styleClass="reg-input"/>
                 
                 <h:outputLabel>Azonosító név:</h:outputLabel>
-                <h:inputText value="#{userService.userName}" size="30" styleClass="reg-input"/>
+                <h:inputText value="#{userService.user.userName}" size="30" styleClass="reg-input"/>
                 
                 
              </h:panelGrid>
@@ -70,14 +67,14 @@
         <h:panelGrid columns="2">
   
        <h:outputLabel>Lakcím:</h:outputLabel>
-       <h:inputText value="#{userService.address}" size="30" styleClass="reg-input"/>
+       <h:inputText value="#{userService.user.address}" size="30" styleClass="reg-input"/>
          
        <h:outputLabel>Telefonszám:</h:outputLabel>
-       <h:inputText value="#{userService.phone}" size="30" styleClass="reg-input"/>
+       <h:inputText value="#{userService.user.phone}" size="30" styleClass="reg-input"/>
         
         
         <h:outputLabel>Skype:</h:outputLabel>
-        <h:inputText value="#{userService.skype}" size="30" styleClass="reg-input"/>
+        <h:inputText value="#{userService.user.skype}" size="30" styleClass="reg-input"/>
        
         </h:panelGrid>
         </fieldset>

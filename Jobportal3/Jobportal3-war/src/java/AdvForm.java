@@ -6,6 +6,7 @@
 
 import ami.com.onlab.jobportal3.Interest;
 import java.io.Serializable;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.Stateful;
 import javax.enterprise.context.Conversation;
@@ -48,24 +49,22 @@ public class AdvForm implements Serializable{
 
   private String newTitle;
    private String newPosName;
+   
+    
+    private List<String> positions;
+    private List<String> regions;
+    private List<String> educations;
+    private List<String> intervals;
+    
+    private String position;
 
-    public String getNewPosName() {
-        return newPosName;
-    }
+    
+    private String region;
+    private String education;
+    private String interval;
+    
+    private String keyword;
 
-    public void setNewPosName(String newPosName) {
-        this.newPosName = newPosName;
-    }
-  
-
-    public String getNewTitle() {
-        return newTitle;
-    }
-
-    public void setNewTitle(String newTitle) {
-        this.newTitle = newTitle;
-    }
- 
     /**
      * Creates a new instance of AdvForm
      */
@@ -223,6 +222,106 @@ public class AdvForm implements Serializable{
      public void addCV(){
         
     }
+     
+     
+    public List<String> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(List<String> positions) {
+        this.positions = positions;
+    }
+
+    public List<String> getRegions() {
+        return regions;
+    }
+
+    public void setRegions(List<String> regions) {
+        this.regions = regions;
+    }
+
+    public List<String> getEducations() {
+        return educations;
+    }
+
+    public void setEducations(List<String> educations) {
+        this.educations = educations;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public String getEducation() {
+        return education;
+    }
+
+    public void setEducation(String education) {
+        this.education = education;
+    }
+
+    public List<String> getIntervals() {
+        return intervals;
+    }
+
+    public void setIntervals(List<String> intervals) {
+        this.intervals = intervals;
+    }
+
+    public String getInterval() {
+        return interval;
+    }
+
+    public void setInterval(String interval) {
+        this.interval = interval;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+    
+    
+    
+
+    public String getNewPosName() {
+        return newPosName;
+    }
+
+    public void setNewPosName(String newPosName) {
+        this.newPosName = newPosName;
+    }
+  
+
+    public String getNewTitle() {
+        return newTitle;
+    }
+
+    public void setNewTitle(String newTitle) {
+        this.newTitle = newTitle;
+    }
+ 
+    
+    public void saveAsInterest(){
+        
+    }
+    
+    
     
     
     //after adv_choose

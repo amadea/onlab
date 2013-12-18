@@ -40,8 +40,8 @@
                  <div class="question">Egyéb preferenciák megadása</div>
                  
                  Pozícióterület
-            <h:selectOneMenu value="#{userService.position}" label="Pozícióterület" >
-                <ui:repeat value="#{userService.positions}" var="pos">  
+            <h:selectOneMenu value="#{advForm.position}" label="Pozícióterület" >
+                <ui:repeat value="#{advForm.positions}" var="pos">  
    
                     <f:selectItem itemValue="#{pos}" itemLabel="#{pos}"/>   
   
@@ -50,8 +50,8 @@
             </h:selectOneMenu>  
                
                  Végzettség
-              <h:selectOneMenu value="#{userService.education}" label="Végzettség" >
-                <ui:repeat value="#{userService.educations}" var="edu">  
+              <h:selectOneMenu value="#{advForm.education}" label="Végzettség" >
+                <ui:repeat value="#{advForm.educations}" var="edu">  
    
                     <f:selectItem itemValue="#{edu}" itemLabel="#{edu}"/>   
   
@@ -59,8 +59,8 @@
             
             </h:selectOneMenu>  
                  Terület
-               <h:selectOneMenu value="#{userService.region}" label="Terület" >
-                <ui:repeat value="#{userService.regions}" var="reg">  
+               <h:selectOneMenu value="#{advForm.region}" label="Terület" >
+                <ui:repeat value="#{advForm.regions}" var="reg">  
    
                     <f:selectItem itemValue="#{reg}" itemLabel="#{reg}"/>   
   

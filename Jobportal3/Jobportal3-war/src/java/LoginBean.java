@@ -14,6 +14,7 @@ import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.Dependent;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 
 /**
  *
@@ -24,7 +25,8 @@ import javax.enterprise.context.RequestScoped;
 @RequestScoped
 public class LoginBean {
     
-    @EJB(name="UserService")
+    //@EJB(name="UserService")
+    @Inject
     private UserService userService;
        
     @EJB
@@ -111,7 +113,8 @@ public class LoginBean {
         if(password.equals(passwordFromDB)){
             //find the userID, and set in the sessionBean
             long id = user.getUserID();
-            userService.initialize(id);
+            //userService.initialize(id);
+            userService.setUser(user);
             
             return "main.xhtml";
         }

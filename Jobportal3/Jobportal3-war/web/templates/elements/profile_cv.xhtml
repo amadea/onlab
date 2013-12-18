@@ -16,7 +16,7 @@
         <fieldset>
         <h:panelGrid columns="2">
          <h:outputLabel>Önéletrajz feltöltése:</h:outputLabel>  
-        <h:inputFile id="cv_file" value="#{userService.CVFile}"/>
+        <h:inputFile id="cv_file" value="#{userService.user.CVFile}"/>
         <h:outputLink id="cv_wizard" value="#">Önéletrajz varázsló</h:outputLink>
          </h:panelGrid>
         </fieldset>

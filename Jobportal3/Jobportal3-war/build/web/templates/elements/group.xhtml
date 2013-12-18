@@ -10,7 +10,7 @@
     <h:body>
         <ui:composition >
                 <h:panelGrid columns="2" >
-            <ui:repeat value="#{userService.groups}" var="group">
+            <ui:repeat value="#{userService.user.groups}" var="group">
             <div class="gruop_name"><h:link value="#{group.name}" outcome="group">
                 <f:param name="id" value="#{group.groupID}" />
             </h:link></div>

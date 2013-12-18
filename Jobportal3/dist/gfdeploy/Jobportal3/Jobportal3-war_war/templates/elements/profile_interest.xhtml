@@ -20,7 +20,7 @@
         <h:outputLabel>Utoljára módosítva</h:outputLabel>
       
         
-        <ui:repeat value="#{userService.interests}" var="int">
+        <ui:repeat value="#{userService.user.interests}" var="int">
             <h1><h:outputText value="#{int.name}" /></h1>
                 <div class="text">
                 <div class="creation_date"><h:outputText value="#{int.creationDate}" /></div>

@@ -15,14 +15,11 @@
              <div class="search3">
             <h:form>
             <fieldset>
-            <ul>
-          
-            <li><label for="keyword">Kulcsszó:</label>
-            <input name="keyword" id="keyword" type="text" />
-            </li>
+            Kulcsszó:
+            <h:inputText value="#{advForm.keyword}" size="20" />
             Pozícióterület
-            <h:selectOneMenu value="#{userService.position}" label="Pozícióterület" >
-                <ui:repeat value="#{userService.positions}" var="pos">  
+            <h:selectOneMenu value="#{advForm.position}" label="Pozícióterület" >
+                <ui:repeat value="#{advForm.positions}" var="pos">  
    
                     <f:selectItem itemValue="#{pos}" itemLabel="#{pos}"/>   
   
@@ -31,8 +28,8 @@
             </h:selectOneMenu>  
                
                  Végzettség
-              <h:selectOneMenu value="#{userService.education}" label="Végzettség" >
-                <ui:repeat value="#{userService.educations}" var="edu">  
+              <h:selectOneMenu value="#{advForm.education}" label="Végzettség" >
+                <ui:repeat value="#{advForm.educations}" var="edu">  
    
                     <f:selectItem itemValue="#{edu}" itemLabel="#{edu}"/>   
   
@@ -40,8 +37,8 @@
             
             </h:selectOneMenu>  
                  Terület
-               <h:selectOneMenu value="#{userService.region}" label="Terület" >
-                <ui:repeat value="#{userService.regions}" var="reg">  
+               <h:selectOneMenu value="#{advForm.region}" label="Terület" >
+                <ui:repeat value="#{advForm.regions}" var="reg">  
    
                     <f:selectItem itemValue="#{reg}" itemLabel="#{reg}"/>   
   
@@ -50,15 +47,15 @@
             </h:selectOneMenu>    
                  
                  
-            <li> <label for="posted">Feladva</label>
-            <select size="3" id="drop_down">
-            <option selected="selected">mind</option>
-            <option>elmúlt 1 nap</option>
-            <option>elmúlt 1 hét</option>
-            <option>elmúlt 1 hónap</option>
-            </select>
-            </li>
-            </ul>
+          Feladva   
+            <h:selectOneMenu value="#{advForm.interval}" label="Terület" >
+                <ui:repeat value="#{advForm.intervals}" var="ival">  
+   
+                    <f:selectItem itemValue="#{ival}" itemLabel="#{ival}"/>   
+  
+                </ui:repeat>  
+            
+            </h:selectOneMenu> 
             </fieldset>
               <h:commandButton action="#{advForm.stepLast}" value="Keresés"/>  
             </h:form>
