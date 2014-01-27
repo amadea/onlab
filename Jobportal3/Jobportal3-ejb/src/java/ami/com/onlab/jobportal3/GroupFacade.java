@@ -6,6 +6,9 @@
 
 package ami.com.onlab.jobportal3;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -27,5 +30,17 @@ public class GroupFacade extends AbstractFacade<Group> {
     public GroupFacade() {
         super(Group.class);
     }
+    
+    public Set<Group> findAllVisibleForUser(long userID){
+        
+        Set<Group> resultList = new HashSet<Group>();
+        
+        List<Group> groupList = em.createQuery("SELECT Group_ID FROM USERS_GROUPS WHERE USER_ID = 'userID'").getResultList();
+        
+        resultList.addAll(groupList);
+        
+        return resultList;
+  
+  }
     
 }

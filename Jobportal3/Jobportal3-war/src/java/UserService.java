@@ -7,6 +7,7 @@
 import ami.com.onlab.jobportal3.Advertisement;
 import ami.com.onlab.jobportal3.AdvertisementFacade;
 import ami.com.onlab.jobportal3.Group;
+import ami.com.onlab.jobportal3.GroupFacade;
 import ami.com.onlab.jobportal3.Interest;
 import ami.com.onlab.jobportal3.User;
 import ami.com.onlab.jobportal3.UserFacade;
@@ -15,7 +16,9 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.ejb.EJB;
 
 /**
@@ -32,18 +35,14 @@ public class UserService implements Serializable {
     private UserFacade userFacade;
    @EJB
     AdvertisementFacade advertisementFacade;
+   @EJB
+    GroupFacade groupFacade;
    
    private User user;
-
-    
-    
+   
     private String password1;
     private String password2;
-    
-    
    
-    
-    
     //personal data
    // private long userID;
     /*
@@ -74,13 +73,11 @@ public class UserService implements Serializable {
     private List<Interest> interests;
     private List<Group> groups;
     
-    private List<Advertisement> visibleAdvertisements;
-    private List<User> visibleMembers;
-
-    
+    private Set<Advertisement> visibleAdvertisements;
+    private Set<User> visibleMembers;
+    private Set<Group> visibleGroups;
 
    
-
     /**
      * Creates a new instance of UserService
      */
@@ -94,9 +91,10 @@ public class UserService implements Serializable {
         //load user data from DB
         user = userFacade.getUser(userID);
         
-        //advertisements
-        visibleAdvertisements = new ArrayList<Advertisement>();
-        visibleAdvertisements = advertisementFacade.findAllVisibleForUser(userID);
+        //advertisements 
+        setVisibleAdvertisements(advertisementFacade.findAllVisibleForUser(userID));
+        setVisibleMembers(userFacade.findAllVisibleForUser(userID));
+        setVisibleGroups(groupFacade.findAllVisibleForUser(userID));
         
     }
 
@@ -104,19 +102,19 @@ public class UserService implements Serializable {
      * @return the userID
      */
     
-     public List<Advertisement> getVisibleAdvertisements() {
+     public Set<Advertisement> getVisibleAdvertisements() {
         return visibleAdvertisements;
     }
 
-    public void setVisibleAdvertisements(List<Advertisement> visibleAdvertisements) {
+    public void setVisibleAdvertisements(Set<Advertisement> visibleAdvertisements) {
         this.visibleAdvertisements = visibleAdvertisements;
     }
     
-    public List<User> getVisibleMembers() {
+    public Set<User> getVisibleMembers() {
         return visibleMembers;
     }
 
-    public void setVisibleMembers(List<User> visibleMembers) {
+    public void setVisibleMembers(Set<User> visibleMembers) {
         this.visibleMembers = visibleMembers;
     }
 
@@ -137,10 +135,8 @@ public class UserService implements Serializable {
         this.password2 = password2;
     }
     
-    
-
-    /**
-     * @param userID the userID to set
+ 
+     /* @param userID the userID to set
      
     public void setUserID(long userID) {
         this.userID = userID;
@@ -215,5 +211,19 @@ public class UserService implements Serializable {
      public void createInterest(){
          //forward to the interest creation panel
      }
+
+    /**
+     * @return the visibleGroups
+     */
+    public Set<Group> getVisibleGroups() {
+        return visibleGroups;
+    }
+
+    /**
+     * @param visibleGroups the visibleGroups to set
+     */
+    public void setVisibleGroups(Set<Group> visibleGroups) {
+        this.visibleGroups = visibleGroups;
+    }
     
 }

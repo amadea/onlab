@@ -21,7 +21,7 @@ import javax.inject.Inject;
  * @author Ami
  */
 @Named(value = "loginBean")
-@ManagedBean 
+//@ManagedBean 
 @RequestScoped
 public class LoginBean {
     

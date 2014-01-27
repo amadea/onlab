@@ -27,6 +27,10 @@ public class Interest implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long interestID;
+    
+    enum DateInterval{
+        ALL, LAST_DAY, LAST_WEEK, LAST_MONTH
+    }
 
     private String name;
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -37,6 +41,7 @@ public class Interest implements Serializable {
     private Advertisement.PositionField PositionField;
     private Advertisement.Education education;
     private Advertisement.Region region;
+    private DateInterval CreationDateInterval;
     
     
 
@@ -169,6 +174,20 @@ public class Interest implements Serializable {
      */
     public void setRegion(Advertisement.Region region) {
         this.region = region;
+    }
+
+    /**
+     * @return the CreationDateInterval
+     */
+    public DateInterval getCreationDateInterval() {
+        return CreationDateInterval;
+    }
+
+    /**
+     * @param CreationDateInterval the CreationDateInterval to set
+     */
+    public void setCreationDateInterval(DateInterval CreationDateInterval) {
+        this.CreationDateInterval = CreationDateInterval;
     }
 
     /**

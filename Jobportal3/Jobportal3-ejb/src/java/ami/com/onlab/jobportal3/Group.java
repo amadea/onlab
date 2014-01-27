@@ -8,7 +8,9 @@ package ami.com.onlab.jobportal3;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -40,11 +42,11 @@ private List<User> members;                 //many-to-many
 
 @ManyToMany
 @JoinTable
-private List<Advertisement> commonAdvertisements;                 //many-to-many
+private Set<Advertisement> commonAdvertisements;                 //many-to-many
 
     public Group(){
     members = new ArrayList<User>();
-    commonAdvertisements = new ArrayList<Advertisement>();
+    commonAdvertisements = new HashSet<Advertisement>();
     }
 
 
@@ -113,11 +115,11 @@ private List<Advertisement> commonAdvertisements;                 //many-to-many
         this.members = members;
     }
 
-    public List<Advertisement> getCommonAdvertisements() {
+    public Set<Advertisement> getCommonAdvertisements() {
         return commonAdvertisements;
     }
 
-    public void setCommonAdvertisements(List<Advertisement> commonAdvertisements) {
+    public void setCommonAdvertisements(Set<Advertisement> commonAdvertisements) {
         this.commonAdvertisements = commonAdvertisements;
     }
     

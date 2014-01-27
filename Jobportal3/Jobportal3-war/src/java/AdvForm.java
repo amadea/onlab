@@ -44,6 +44,7 @@ public class AdvForm implements Serializable{
     private boolean advSearch4aVisible;
 
     private boolean advNewVisible;
+    private boolean addCV;
  
     private Interest choosedInterest;
 
@@ -64,6 +65,10 @@ public class AdvForm implements Serializable{
     private String interval;
     
     private String keyword;
+    private boolean saveAsInterest;
+     boolean addInterest;
+
+    
 
     /**
      * Creates a new instance of AdvForm
@@ -82,6 +87,8 @@ public class AdvForm implements Serializable{
     advSearch3bVisible = false;
     advSearch4aVisible = false;
     advNewVisible = false;
+    
+   
     }
     
     @PostConstruct
@@ -214,14 +221,18 @@ public class AdvForm implements Serializable{
     public void setChoosedInterest(Interest choosedInterest) {
         this.choosedInterest = choosedInterest;
     }
-    
-    public void addInterest(){
-        
+
+    public boolean isAddCV() {
+        return addCV;
+    }
+
+    public void setAddCV(boolean addCV) {
+        this.addCV = addCV;
     }
     
-     public void addCV(){
-        
-    }
+    
+    
+     
      
      
     public List<String> getPositions() {
@@ -295,8 +306,30 @@ public class AdvForm implements Serializable{
     public void setKeyword(String keyword) {
         this.keyword = keyword;
     }
+
+    public Conversation getConversation() {
+        return conversation;
+    }
+
+    public void setConversation(Conversation conversation) {
+        this.conversation = conversation;
+    }
+
+    public boolean isSaveAsInterest() {
+        return saveAsInterest;
+    }
+
+    public void setSaveAsInterest(boolean saveAsInterest) {
+        this.saveAsInterest = saveAsInterest;
+    }
     
-    
+    public boolean isAddInterest() {
+        return addInterest;
+    }
+
+    public void setAddInterest(boolean addInterest) {
+        this.addInterest = addInterest;
+    }
     
 
     public String getNewPosName() {
@@ -317,9 +350,7 @@ public class AdvForm implements Serializable{
     }
  
     
-    public void saveAsInterest(){
-        
-    }
+   
     
     
     
