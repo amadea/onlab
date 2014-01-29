@@ -156,4 +156,8 @@ public class AdvertisementFacade extends AbstractFacade<Advertisement> {
         
     }
     
+    public void createAdvertisement(Advertisement adv){
+         em.persist(adv);
+    }
+    
 }

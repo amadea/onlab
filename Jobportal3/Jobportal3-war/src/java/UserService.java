@@ -57,8 +57,8 @@ public class UserService implements Serializable {
     private String phone;
     private String skype;
     private String userName;
-    
     */
+   
 
     
     public User getUser() {
@@ -76,8 +76,20 @@ public class UserService implements Serializable {
     private Set<Advertisement> visibleAdvertisements;
     private Set<User> visibleMembers;
     private Set<Group> visibleGroups;
+    
 
+   //advForm data
+       
+       private Advertisement.Type type;
+       private Interest interest;
+       
+   //newAdvData
+       
+       private Advertisement newAdv;
    
+   //results
+       Set<Advertisement> advResultSet;
+       
     /**
      * Creates a new instance of UserService
      */
@@ -226,4 +238,84 @@ public class UserService implements Serializable {
         this.visibleGroups = visibleGroups;
     }
     
+
+    /**
+     * @return the type
+     */
+    public Advertisement.Type getType() {
+        return type;
+    }
+
+    /**
+     * @param type the type to set
+     */
+    public void setType(Advertisement.Type type) {
+        this.type = type;
+    }
+
+    /**
+     * @return the interest
+     */
+    public Interest getInterest() {
+        return interest;
+    }
+
+    /**
+     * @param interest the interest to set
+     */
+    public void setInterest(Interest interest) {
+        this.interest = interest;
+    }
+
+    /**
+     * @return the newAdv
+     */
+    public Advertisement getNewAdv() {
+        return newAdv;
+    }
+
+    /**
+     * @param newAdv the newAdv to set
+     */
+    public void setNewAdv(Advertisement newAdv) {
+        this.newAdv = newAdv;
+    }
+   
+    
+    
+    public void createANewAdvertisement(){
+        
+        newAdv = new Advertisement();
+    }
+    
+    public void createANewSearch(){
+        
+        type = null;
+        interest = new Interest();
+        
+    }
+    
+   
+    
+    //post new adv.
+    public void postAdvertisement(){
+        
+        //set the creation date and the creator
+         newAdv.setCreationDate(new Date());
+         newAdv.setCreator(user);
+         
+         //call the advertisementFacade method
+         advertisementFacade.createAdvertisement(newAdv);
+    }
+    
+    //start adv. search
+     public void searchAdvertisement(){
+         
+         //call the advertisementFacade method
+        advResultSet = advertisementFacade.selectAdvertisements(type, interest);
+    }
+     
+     public Set<Advertisement> getAdvResultSet(){
+         return advResultSet;
+     }
 }

@@ -72,7 +72,9 @@
             érdeklődési körként
             
             </fieldset>
-           <h:commandButton action="#{advForm.stepLast}" value="Keresés"/>  
+           <h:commandButton action="#{advForm.showResults}" value="Keresés">
+              <f:actionListener binding="#{userService.searchAdvertisement}"/>
+              </h:commandButton>
             </h:form>
             </div>
             </div>

@@ -13,10 +13,20 @@
             
          <h1>Keresés keres típusú hírdetések között</h1> 
          <div class="text">
+         <div class="question">Érdeklődési kör</div>
+         <h:form>
+          <fieldset>
+         <h:selectOneMenu value="#{userService.user.interests}">
+             <f:selectItems value="#{userService.user.interests}" var="i"
+                            itemLabel="#{i.name}" itemValue="#{i}" />
+        </h:selectOneMenu>
              
-         <div class="question">Érdeklődési kör</div>   
-         
-        
+         </fieldset>
+             <h:commandButton action="#{advForm.showResults}" value="Keresés">
+              <f:actionListener binding="#{userService.searchAdvertisement}"/>
+              </h:commandButton>
+         </h:form>
+        </div>
        </ui:composition>     
      
     </h:body>

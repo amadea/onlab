@@ -11,52 +11,15 @@
         <ui:composition template="templates/innerTemplate.xhtml">
                
              <ui:define name="center">
-                 
-                <h:commandButton value="Hírdetéskezelés"
-                     action="#{advForm.start}" />
-          
+  
                <!--choose block--> 
-              <h:panelGroup rendered="#{advForm.advChooseVisible}"><!--rendered="#{advForm.advChooseVisible==true}"-->  
+              <h:panelGroup><!--rendered="#{advForm.advChooseVisible==true}"-->  
              <ui:insert name="adv_choose">
                       <ui:include src="templates/elements/adv_choose.xhtml"/>
             </ui:insert>
               </h:panelGroup>
                
-                   
-              <!--search block-->
-             <h:panelGroup >  <!--rendered="#{advForm.advSearch1Visible}"-->                
-             <ui:insert name="adv_search1">
-                            <ui:include src="templates/elements/adv_search1.xhtml"/>
-            </ui:insert>
-            </h:panelGroup>
-             
-             
-             <h:panelGroup >  <!--rendered="#{advForm.advSearch2Visible}"-->                
-             <ui:insert name="adv_search2">
-                            <ui:include src="templates/elements/adv_search2.xhtml"/>
-            </ui:insert>
-            </h:panelGroup>
-             
-              <h:panelGroup >  <!--rendered="#{advForm.advSearch3aVisible}"-->               
-             <ui:insert name="adv_search3a">
-                            <ui:include src="templates/elements/adv_search3a.xhtml"/>
-            </ui:insert>
-            </h:panelGroup>
-             
-              <h:panelGroup >  <!--rendered="#{advForm.advSearch3bVisible}"-->                  
-             <ui:insert name="adv_search3b">
-                            <ui:include src="templates/elements/adv_search3b.xhtml"/>
-            </ui:insert>
-            </h:panelGroup>
-           
-       
-            <!--new block-->
-             <h:panelGroup > <!--rendered="#{advForm.advNewVisible}"-->  
-             <ui:insert name="adv_new">
-                            <ui:include src="templates/elements/adv_new.xhtml"/>
-            </ui:insert>
-              </h:panelGroup>  
-            
+          
             </ui:define>
             
         </ui:composition>  

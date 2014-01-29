@@ -31,12 +31,10 @@
                 <h:inputText value="#{advForm.newPosName}" label="Pozíciónév:"/>
             Hirdetés szövege
             <h:inputTextarea cols="60" rows="5" label="Hirdetés szövege"/>
-            Érdeklődési kör hozzáadása
-            <h:selectBooleanCheckbox value="#{advForm.addInterest}" label="Érdeklődési kör hozzáadása" />
+            <!--Érdeklődési kör hozzáadása
+            <h:selectBooleanCheckbox value="#{advForm.addInterest}" label="Érdeklődési kör hozzáadása" />-->
+            
         
-            
-            
-            
                  <div class="question">Egyéb preferenciák megadása</div>
                  
                  Pozícióterület
@@ -68,14 +66,15 @@
             
             </h:selectOneMenu>    
                  
-       Feltöltött önéletrajz hozzáadása
-            <h:selectBooleanCheckbox value="#{advForm.addCV}" label="Feltöltött önéletrajz hozzáadása" />
+       <!--Feltöltött önéletrajz hozzáadása
+            <h:selectBooleanCheckbox value="#{advForm.addCV}" label="Feltöltött önéletrajz hozzáadása" />-->
             
             
             </h:form>
            
-            
-            <h:commandButton action="go" value="Feladás"/>
+              <h:commandButton action="#{advForm.sendAdvertisement}" value="Feladás">
+              <f:actionListener binding="#{userService.postAdvertisement}"/>
+              </h:commandButton>
             </div>
             <div style="clear: both;"></div>
 

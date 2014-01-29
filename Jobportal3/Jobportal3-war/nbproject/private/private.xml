@@ -4,7 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Ami/Documents/NetBeansProjects/Jobportal3/Jobportal3-war/src/java/UserService.java</file>
+            <file>file:/C:/Users/Ami/Documents/NetBeansProjects/Jobportal3/Jobportal3-war/web/templates/elements/adv_search4a.xhtml</file>
+            <file>file:/C:/Users/Ami/Documents/NetBeansProjects/Jobportal3/Jobportal3-war/web/advertsended.xhtml</file>
+            <file>file:/C:/Users/Ami/Documents/NetBeansProjects/Jobportal3/Jobportal3-war/web/advertsresults.xhtml</file>
+            <file>file:/C:/Users/Ami/Documents/NetBeansProjects/Jobportal3/Jobportal3-war/web/main.xhtml</file>
+            <file>file:/C:/Users/Ami/Documents/NetBeansProjects/Jobportal3/Jobportal3-war/web/templates/elements/adv_new.xhtml</file>
             <file>file:/C:/Users/Ami/Documents/NetBeansProjects/Jobportal3/Jobportal3-war/src/java/AdvForm.java</file>
+            <file>file:/C:/Users/Ami/Documents/NetBeansProjects/Jobportal3/Jobportal3-war/web/templates/elements/adv_sended.xhtml</file>
         </group>
     </open-files>
 </project-private>

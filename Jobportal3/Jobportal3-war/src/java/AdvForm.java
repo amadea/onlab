@@ -24,11 +24,11 @@ import javax.inject.Inject;
  */
 @Named(value = "advForm")
 //@Dependent
-@ConversationScoped()
+//@ConversationScoped()
 public class AdvForm implements Serializable{
     
     
-    @Inject private Conversation conversation;
+   // @Inject private Conversation conversation;
     
    // ListAdvertisements list = new ListAdvertisements();
     
@@ -91,10 +91,10 @@ public class AdvForm implements Serializable{
    
     }
     
-    @PostConstruct
+  /*  @PostConstruct
     private void initialize() {
    conversation.begin();
-    }
+    }*/
     
     
      public String getOperationType() {
@@ -306,14 +306,14 @@ public class AdvForm implements Serializable{
     public void setKeyword(String keyword) {
         this.keyword = keyword;
     }
-
+/*
     public Conversation getConversation() {
         return conversation;
     }
 
     public void setConversation(Conversation conversation) {
         this.conversation = conversation;
-    }
+    }*/
 
     public boolean isSaveAsInterest() {
         return saveAsInterest;
@@ -350,16 +350,51 @@ public class AdvForm implements Serializable{
     }
  
     
-   
+    //navigate by operation type
+    public String next1(){
+        if(operationType.equalsIgnoreCase("new")){
+            
+            return "../../adverts2";
+        }
+        return "../../adverts1";
+    }
+    
+    //navigate by search type
+     public String next2(){
+        if(searchType.equalsIgnoreCase("worker")){
+            
+            return "../../adverts1_2";
+        }
+        return "../../adverts1_1";
+    }
+    
+     //navigate by source type
+     public String next3(){
+        if(sourceType.equalsIgnoreCase("interest")){
+            
+            return "../../adverts1_1_2";
+        }
+        return "../../adverts1_1_1";
+    }
+     
+     //send new adv.
+      public String sendAdvertisement(){
+         return "../../advertsended";
+     }
+     
+     //show results
+     public String showResults(){
+         return "../../advertsresults";
+     }
     
     
-    
+    /* 
     
     //after adv_choose
     public void step1(){
  
         setAdvChooseVisible(false);
-        start();
+        //start();
         
         switch(operationType){
             case "search":  setAdvSearch1Visible(true);
@@ -395,7 +430,7 @@ public class AdvForm implements Serializable{
         }
     
     }
-    
+     
     public void stepLast(){
   
        //list.showResults();
@@ -405,7 +440,7 @@ public class AdvForm implements Serializable{
     
     
   
-      
+    
       public void start() {
        
     conversation.begin();
@@ -414,5 +449,5 @@ public class AdvForm implements Serializable{
   public void end() {
     conversation.end();
     
-  }
+  }*/
 }
