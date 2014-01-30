@@ -39,15 +39,8 @@ public class AdvertisementFacade extends AbstractFacade<Advertisement> {
      public List<Advertisement> getAllAdvertisement() {
         return em.createNamedQuery("advertisement.getAll").getResultList();
     }
-    /* 
-    public Set<Advertisement> getCreatedAdvertisements(){
-        
-    }
-    
-    public Set<Advertisement> getAppliedAdvertisements(){
-        
-    }*/
-    
+  
+     
     public Set<Advertisement> findAllVisibleForUser(long userID){
         
         Set<Advertisement> resultList = new HashSet<Advertisement>();

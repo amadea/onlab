@@ -11,7 +11,7 @@
           <ui:composition>
  
                 <h:panelGrid columns="2" >
-                    <ui:repeat value="#{userService.visibleMembers}" var="member">
+                    <ui:repeat value="#{userDataDisplay.visibleMembers}" var="member">
             <div class="member_name"><h:link value="#{member.userName}" outcome="member">
                 <f:param name="id" value="#{member.userID}" />
             </h:link></div>
