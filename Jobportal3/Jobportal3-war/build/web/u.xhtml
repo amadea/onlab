@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Felhasználó megtekintése</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+ 
+            <h1><h:outputText value="#{userDisplay.user.userName}" /></h1>
+            <div class="text">
+            <div class="form">
+            <h:form>  
+                
+            <fieldset>
+             <div class="question"><h:outputLabel>Regisztrációs adatok</h:outputLabel></div>
+             <h:panelGrid columns="2">
+         
+                <h:outputLabel>Vezetéknév:</h:outputLabel>
+                <h:inputText value="#{userDisplay.user.lastName}" size="30" styleClass="reg-input"/>
+                
+                <h:outputLabel>Keresztnév:</h:outputLabel>
+                <h:inputText value="#{userDisplay.user.firstName}" size="30" styleClass="reg-input"/>
+                
+                <h:outputLabel>Azonosító név:</h:outputLabel>
+                <h:inputText value="#{userDisplay.user.userName}" size="30" styleClass="reg-input"/>
+                
+                
+             </h:panelGrid>
+            </fieldset>
+            
+     
+            <fieldset>
+            <div class="question"><h:outputLabel>Személyes adatok</h:outputLabel></div>
+            
+             <h:panelGrid columns="3" >
+                
+             <h:outputLabel>Születési dátum(év/hónap/nap)</h:outputLabel> 
+             <h:outputLabel>pl. 2000/01/01</h:outputLabel> 
+            <h:inputText value="#{userDisplay.birthDate}" size="10" styleClass="reg-input">
+            <f:convertDateTime pattern="yyyy/MM/dd"/>
+            </h:inputText>  
+             
+             </h:panelGrid>
+             
+             <h:panelGrid columns="4" >
+                 
+            <h:outputLabel>Nem:</h:outputLabel>
+            <h:selectOneMenu value="#{userDisplay.gender}">
+                <f:selectItem itemValue="female" itemLabel="Nő" />
+                <f:selectItem itemValue="male" itemLabel="Férfi" />
+            </h:selectOneMenu> 
+   
+            <h:outputLabel>Nemzetiség:</h:outputLabel>
+            <h:selectOneMenu value="#{userDisplay.nationality}">
+                <f:selectItem itemValue="hungarian" itemLabel="Magyar" />
+            </h:selectOneMenu> 
+        
+        </h:panelGrid>
+        </fieldset>
+     
+        <fieldset>
+        <div class="question"><h:outputLabel>Elérhetőségek</h:outputLabel></div>
+        <h:panelGrid columns="2">
+  
+       <h:outputLabel>Lakcím:</h:outputLabel>
+       <h:inputText value="#{userDisplay.user.address}" size="30" styleClass="reg-input"/>
+         
+       <h:outputLabel>Telefonszám:</h:outputLabel>
+       <h:inputText value="#{userDisplay.user.phone}" size="30" styleClass="reg-input"/>
+        
+        
+        <h:outputLabel>Skype:</h:outputLabel>
+        <h:inputText value="#{userDisplay.user.skype}" size="30" styleClass="reg-input"/>
+       
+        </h:panelGrid>
+        </fieldset>
+ 
+	</ui:composition>
+    </h:body>
+</html>
+
+
+

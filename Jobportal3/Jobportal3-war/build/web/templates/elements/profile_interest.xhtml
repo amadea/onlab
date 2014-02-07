@@ -26,9 +26,10 @@
                 <div class="creation_date"><h:outputText value="#{int.creationDate}" /></div>
                 <div class="last_date"><h:outputText value="#{int.lastModified}" /></div>
                 
-            <h:link value="#{int.name}" outcome="int">
-                <f:param name="id" value="#{int.interestID}" />
-            </h:link>
+            <h:link value="Megtekintés" outcome="i">
+                <f:param name="interestlist" value=#{int.interestID} />
+             </h:link>
+            
                 </div>
         </ui:repeat>
        

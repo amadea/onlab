@@ -43,4 +43,9 @@ public class GroupFacade extends AbstractFacade<Group> {
   
   }
     
+     public Group getGroup(long groupID) {
+        Group group = em.find(Group.class, groupID);
+        return group;
+    }
+    
 }

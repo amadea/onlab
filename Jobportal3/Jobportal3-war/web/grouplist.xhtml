@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Csoportok</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="templates/innerTemplate.xhtml">
+            
+            <ui:define name="center">
+         
+             <ui:repeat value="#{userService.visibleGroups}" var="group">
+             <h1><h:outputText value="#{group.name}" /></h1>
+             <div class="text">
+             <p><h:outputText value="#{group.description}" /></p>
+           
+             <h:link value="Megtekintés" outcome="g">
+                 <f:param name="grouplist" value=#{group.groupID} />
+             </h:link>
+            </div>
+             </ui:repeat>
+  
+            </ui:define>
+            
+        </ui:composition>     
+    </h:body>
+</html>
+

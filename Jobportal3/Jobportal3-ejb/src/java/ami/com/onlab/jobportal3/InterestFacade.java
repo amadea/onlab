@@ -28,4 +28,9 @@ public class InterestFacade extends AbstractFacade<Interest> {
         super(Interest.class);
     }
     
+    public Interest getInterest(long interestID) {
+        Interest interest = em.find(Interest.class, interestID);
+        return interest;
+    }
+    
 }

@@ -129,4 +129,22 @@ public class UserDataDisplay implements Serializable {
         this.visibleGroups = visibleGroups;
     }
     
+    //navigation methods
+    
+    public String moreCreated(){
+        return "createdlist";
+    }
+    
+    public String moreApplied(){
+        return "appliedlist";
+    }
+    
+    public String moreGroups(){
+        return "groplist";
+    }
+    
+    public String moreMembers(){
+        return "memberlist";
+    }
+    
 }

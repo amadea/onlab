@@ -153,4 +153,9 @@ public class AdvertisementFacade extends AbstractFacade<Advertisement> {
          em.persist(adv);
     }
     
+    public Advertisement getAdvertisement(long advertisementID) {
+        Advertisement advertisement = em.find(Advertisement.class, advertisementID);
+        return advertisement;
+    }
+    
 }
